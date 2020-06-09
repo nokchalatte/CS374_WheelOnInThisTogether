@@ -11,6 +11,9 @@ To use it, use
 To change the styling of the icon for individual page, add new styling in the page's CSS.
 **DO NOT** modify the styling in styleguide.css, unless it is already agreed upon (e.g must fit 24 x 24 box)
 
+### Implementation
+The Web application is made using with HTML, CSS, Javascript, and applying the Bootstrap and jQuery framework.
+
 ### Homepage
 The homepage shows the three core functionalities of our application: routes, forum, and rating. By clicking on the "View More" button, you will be redirected to the page you want to see.
 
@@ -24,5 +27,26 @@ Route information is stored in Firebase Realtime Database, and pictures are stor
 In this prototype, we prepared route cards for going from "한국과학기술원 진리관" to "Starbucks Eoeun-dong, Yuseong-gu, Daejeon".
 
 ### Forum
+In this page, users are able to create forum posts to ask other users. Each post has a topic category, a topic title, and its content. Users are free to leave a comment and like other people's post. 
+
+The backend implementation of this page uses mainly javascript and jQuery. To send data between two different html pages without relying on database frameworks, we used the Firebase and manipulated the data with javascript and jQuery. The representative code is as follows:
+
+[Code Photo]
+
+We created a key for every new post, and when a user clicks on the post, a data-key attribute is added to the url and the url is changed to the post's Forum Post page.
+
+[Photo]
+
+From there, we change the items such as the post title, category, and content according to the attributes stored in the Firebase. That way, when we go back, or refresh, the data remains.
+
 
 ### Rating
+
+You can find the rating and reviews of a certain restaurant. The rating homepage is a search page, where user can input the restaurant name, and it will show the result as rating card. Otherwise, if there is no corresponding review, it will show the "No result found".
+
+When a rating card is clicked, it will lead to the restaurant review page. The page consists of the the restaurant info, rating, and user reviews. There are three subratings, "Facility", "Accessibility", and "Safety". 
+
+User can input their review using "RATE YOUR EXPERIENCE" button. It will open a new popup, where use can input their ratings and comment. The review can be only submitted if all the rating is filled. Otherwise, a warning message will appear to remind user to fill all the rating. 
+
+
+Once the review is submitted, a feedback message will appear, telling that it has been successfully posted, and the new review will appear on the top of the comment section

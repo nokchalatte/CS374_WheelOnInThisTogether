@@ -4,7 +4,7 @@ a{
 
 .addList{
   position: absolute;
-  top: 115px;
+  top: 169px;
   left: 70%;
 }
 
@@ -40,7 +40,11 @@ a{
 
 .description-list{
   font-size: 16px;
-  margin-left: 20px;
+  margin: 0 0 5px 20px;
+  padding-left: 8px;
+  list-style-type: decimal;
+  list-style-position: outside;
+  display: list-item;
 }
 
 .from-place{
@@ -144,7 +148,7 @@ label{
   font-weight: bold;
 }
 
-li{
+.route-contents-list{
   margin: 0 0 5px 40px;
   font-size: 14px;
   padding-left: 8px;
@@ -276,14 +280,14 @@ p{
 }
 
 #routes-individual-main{
-  margin-top: 88px;
+  margin-top: 140px;
 }
 
 .route-list{
   position: absolute;
   width: 24.44%;
   height: auto;
-  top: 155px;
+  top: 206px;
   left: 70%;
 }
 

@@ -61,7 +61,7 @@ $( document ).ready(function() {
                 + "<div class='username-circle'></div><div class='username' id='username-index'><p>"
                 + username + "</p></div><div class='route-likes'><span class=icon-like aria-hidden='true' id='heart-number'></span>"
                 + "<small class='number-of-likes' id='route-number-likes'>" + likes + " Likes</small></div></div><div class='route-card-contents'>"
-                + "<ol><li>" + descl[0] + "</li><li>" + descl[1] + "</li><li>" + descl[2] + "</li></ol></div>"
+                + "<ol><li class='route-contents-list'>" + descl[0] + "</li><li class='route-contents-list'>" + descl[1] + "</li><li class='route-contents-list'>" + descl[2] + "</li></ol></div>"
                 + "<div class='route-card-icons'>";
     if (ramp == true){
       card = card + "<span class=icon-ramp aria-hidden='true' id='icon-ramp'></span>";

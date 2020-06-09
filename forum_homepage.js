@@ -69,14 +69,28 @@ $(document).ready(function(){
         total_likes: 0,
         total_replies: 0,
         poster: 'Wheelie', //Changed later to username when login is implemented!
-        comment_array:{},
+        comment_array:null,
       };
 
       var updates = {};
-      updates["/post_comment/" + key] = post;
+      updates["post_comment/" + key] = post;
       firebase.database().ref().update(updates);
     }
   };
+
+  // var elements = document.getElementsByClassName('redirect');
+  // Array.from(elements).forEach(function(element) {
+  //     element.addEventListener('click', getKey);
+  // });
+  
+  $(document).on('click','.whole_card',function(){
+    console.log($(this).find('div').context.getAttribute('data-key'));
+    var post_dataKey = $(this).find('div').context.getAttribute('data-key');
+    var new_url = "/forum_post.html" + "?data-key=" + post_dataKey;
+    var curr_webpage = window.location.href;
+    var post_webpage = curr_webpage.replace(/\/[^\/]*$/, new_url);
+    window.location.href = post_webpage;
+  })
 
    function add_new_post(){
       var post_section = document.getElementById('post_container');
@@ -106,9 +120,10 @@ $(document).ready(function(){
 
           //Add to HTML
           //Make Container for each card
-          var post_card = document.createElement("divs");
+          var post_card = document.createElement("div");
           post_card.setAttribute("class", "card");
           post_card.classList.add("comment");
+          post_card.classList.add("whole_card");
           post_card.setAttribute("data-key", post_key);
 
           //upper section of the card
@@ -131,7 +146,7 @@ $(document).ready(function(){
 
           //lower section
           var lower_part = document.createElement("div");
-          lower_part.setAttribute('class', 'user-info');
+          lower_part.setAttribute('class','user-info');
           lower_part.classList.add("row");
           var profile_pic = document.createElement("span");
           profile_pic.setAttribute('class', 'user-circle');
@@ -165,10 +180,14 @@ $(document).ready(function(){
             like_number.innerHTML = post_likes + " Likes";
           }
 
-          var read_more = document.createElement("span");
-          read_more.setAttribute('class', 'go_more');
+          var span_read = document.createElement("span");
+          var read_more = document.createElement("a");
+          span_read.setAttribute('class', 'go_more');
+          read_more.classList.add('redirect');
+          // read_more.setAttribute('onClick', 'getKey()');
           read_more.innerHTML = "READ MORE";
-
+          // $('.go_more').append('<a class="redirect" onclick="getKey()">READ MORE</a>');
+          span_read.append(read_more);
           lower_part.append(profile_pic);
           lower_part.append(poster_name);
           lower_part.append(separator);
@@ -176,7 +195,7 @@ $(document).ready(function(){
           lower_part.append(comment_number);
           lower_part.append(likes_icon);
           lower_part.append(like_number);
-          lower_part.append(read_more);
+          lower_part.append(span_read);
           
           post_card.append(upper_part);
           post_card.append(lower_part);
@@ -187,6 +206,7 @@ $(document).ready(function(){
 
       });
    }
+   // getKey();
    add_new_post();
 })
 

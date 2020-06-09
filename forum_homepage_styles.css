@@ -47,6 +47,9 @@
 	/*background-color:red;*/
 }
 
+.redirect{
+	z-index: 20;
+}
 #right_side{
 	height: auto;
 }

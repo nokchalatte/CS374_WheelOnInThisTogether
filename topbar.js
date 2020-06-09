@@ -28,7 +28,7 @@ $( document ).ready(function() {
 				if ($('#sideBarClose').length != 0) {
 					SideBarWidth.style.width = 0;
 					ULContent.innerHTML = "";
-					console.log("hey")
+					$("div").not(".sidebar").css("opacity", "1"); // opacity code
 				}
 			}
 		})
