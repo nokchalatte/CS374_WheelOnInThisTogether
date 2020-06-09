@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="styleGuide.css">
     <link rel="stylesheet" href="forum_homepage_styles.css" type="text/css">
+    <link rel="stylesheet" href="topbar.css" type="text/css">
 
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -32,6 +33,34 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body style="background-color: #F1F3F5">
+	<div class="outside_topbar">
+			<div class="topbar">
+				<div class="row">
+					<div class="col-md-1">
+						<span class="icon-menu" id='sideBarOpen'></span>
+					</div>
+					<div class="col-md-2" id="logo">
+						<b><center>WheelOn</center></b>
+					</div>
+					<div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
+						<span> USERNAME </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<ul>
+				<li>
+					<span class="col-md-2"><b> WheelOn </b></span>
+					<span class="icon-menu" id="sideBarClose"></span>
+				</li>
+				<br>
+				<li class="options">Forum</li>
+				<li class="options">Routes</li>
+				<li class="options">Rate</li>
+				<li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>
+			</ul>
+		</div>
 	<div class="all_items">
 		<div class="container">
 		<div class="row">
@@ -129,5 +158,7 @@
 		</div>
 	</div>
 	<script src="forum_homepage.js"></script>
+	<script src="topbar.js"></script>
+	<script src="sidebar.js"></script>
 </body>
 </html>

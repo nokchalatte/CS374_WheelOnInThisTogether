@@ -220,9 +220,6 @@ function OnInput(){
 				number_replies.innerHTML = comment_array.length + " Replies";
 				total_like.innerHTML = comment_array.length + " Replies";
 			}
-
-			// $(.comment_container).append('<div class="container comment_card"> <div class="user_comment card"><div class="username_info row"><span class="user-circle"></span><label class="username">Username</label></div><p class="comment_content">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p></div></div>');
-
   		}
   	});
   }

@@ -1,5 +1,6 @@
 .all_items{
 	padding:32px;
+	margin-top: 52px;
 }
 .container{
 	margin:0 !important;
@@ -58,6 +59,7 @@
 	position:-webkit-sticky; 
 	position:sticky; 
 	top:32px;
+	/*margin-top:60px;*/
 }
 
 #create_button{
@@ -331,7 +333,33 @@ select{
 	text-align: center;
 	color: #868E96;
 }
-/*
-li:first-child{
-	background-color:yellow;
+
+.icon-menu{
+	margin-top:20px;
+	vertical-align: center;
+}
+
+/*.options{
+	
 }*/
+
+/*For sidebar*/
+#logo{
+	margin-bottom:40px;
+}
+
+.col-md-1{
+	align-te
+}
+/*li.options:first-child{
+	background-color: blue;
+	text-align: left;
+	margin-top:100px;
+}*/
+
+
+.sidebar ul li:nth-of-type(2) {
+	/*background-color:yellow;*/
+	margin-top: 40px;
+	align-text:left;
+}
