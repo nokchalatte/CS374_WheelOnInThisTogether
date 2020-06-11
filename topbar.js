@@ -1,4 +1,4 @@
-$( document ).ready(function() {	
+$( document ).ready(function() {
 	var Logo = document.getElementById('logo');
 	var SideBarOpen = document.getElementById('sideBarOpen');
 	var ULContent = document.getElementsByTagName("UL")[0];
