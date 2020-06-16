@@ -141,6 +141,10 @@ $( document ).ready(function() {
     })
   }
 
+  // function addRoute(){
+  //   routesRef.push(new_route)
+  // }
+
   function changeMapPlace(location){
     var beginlink = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY&q=";
     var place = encodeURIComponent(location);
@@ -153,6 +157,10 @@ $( document ).ready(function() {
     changeMapPlace(document.getElementById("toPlace").value);
     searchRoute();
   })
+
+  // $("#addRouteButton").click(function(){
+  //   addRoute();
+  // })
 
   $( document ).ready(function() {
     $( document ).on("click", ".route-card", function(){

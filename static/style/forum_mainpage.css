@@ -1,0 +1,104 @@
+/*Tags and “add to my list” cards → Nabila*/
+.categories_card{
+	width:100%;
+}
+
+.categories_card{
+	/*padding-top:32px; upper padding might need to be changed later*/
+	top:0;
+	position: sticky; /*Uncomment if you want it to follow the screen*/
+}
+
+.list-group-item{
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	padding: 12px 32px;
+	font-weight: 500;
+	border-bottom:none;
+	border-top:none;
+	border: none;
+}
+.list-group{
+	border-radius: 10px;
+}
+.list-group-item:first-child{
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	/*padding: 32px 32px 12px 32px;*/
+	padding: 12px 32px;
+	border-radius: 10px 10px 0px 0px;
+	/*border-top: 1px solid #D0EBFF;*/
+}
+
+.list-group-item:nth-child(5){
+	text-transform: uppercase;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	/*padding: 12px 32px 32px 32px;*/
+	padding: 12px 32px;
+	border-radius: 0px 0px 10px 10px;
+	/*border-bottom: 1px solid #D0EBFF;*/
+}
+
+.list-group-item:hover{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	border-color:#D0EBFF;
+}
+
+.list-group-item.active{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	border-color:#D0EBFF;
+	/*border-color: none !important;*/
+}
+
+.list-group{
+	width: 12em;
+	border-radius: 10px;
+	border-color: #D0EBFF;
+}
+
+/*For post card*/
+.category-title {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.card-footer {
+	background-color: #D0EBFF;
+	color: #1971C2;
+	font-weight: bold;
+}
+.likes-and-comment {
+    color: #1971C2;
+}
+
+.comment_icon{
+	stroke-width:2;
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}
+
+.username {
+    text-transform: uppercase;
+}
+
+.heart_button{
+	border-
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}
+
+/*For post category tags*/
+.category-tags{
+	text-transform: uppercase;
+	/*background-color: rgba(40,167,69,0.3);*/
+	/*color:#28a745;*/
+	background-color: #D0EBFF;
+	color:#1971C2;
+}
+
+.link_color{
+	color:#1971C2;
+}

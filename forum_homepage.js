@@ -12,6 +12,8 @@ $(document).ready(function(){
   	this.style.height = 'auto';
   	this.style.height = (this.scrollHeight) + 'px';
   }
+
+
   // console.log("still js works!");
 
   // Your web app's Firebase configuration
@@ -28,23 +30,18 @@ $(document).ready(function(){
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    // firebase.analytics();
-    // 
-    // console.log("still js works 2!");
-
-   // $('.go_more').on('click', function(){
-   // 	go_to_post();
-   // })
-
-   function go_to_post(){
-   	  // console.log('going to post!');
-   }
 
    $('#post_button').on('click', function(e){
       e.preventDefault();
       console.log('button is pushed');
       get_post();
       add_new_post();
+
+      //Clear Input box
+      const topic_input = document.getElementById("topic_input");
+      const user_input = document.getElementById("user_input");
+      topic_input.innerHTML = "";
+      user_input.innerHTML = "";
    });
     // console.log("still js works 3!");
 
@@ -69,7 +66,7 @@ $(document).ready(function(){
         total_likes: 0,
         total_replies: 0,
         poster: 'Wheelie', //Changed later to username when login is implemented!
-        comment_array:null,
+        user_comments: null,
       };
 
       var updates = {};
@@ -92,6 +89,10 @@ $(document).ready(function(){
     window.location.href = post_webpage;
   })
 
+  function sort_by_category(category){
+    //Advice, Events, lifestyle, others, all
+  }
+
    function add_new_post(){
       var post_section = document.getElementById('post_container');
       // post_container.innerHTML = "";
@@ -105,10 +106,17 @@ $(document).ready(function(){
 
         post_array = post_array.reverse(); //so most recent post is displayed at the top
         if (post_array.length > 0){
+          console.log('post array more than 0');
           post_container.innerHTML = "";
         }
+        // else if (post_array.length == 0){
+        //   post_container.innerHTML = "";
+        //   post_container.append("<h4 id="empty_posts">Be the first to Ask!</h4>");
+        // };
 
+        //Reload everything in firebase
         for (var i=0; i<post_array.length;i++){
+          console.log('post array: '+post_array[i]);
           var post_category = post_array[i][0];
           var post_content = post_array[i][1];
           var post_key = post_array[i][2];
@@ -202,9 +210,8 @@ $(document).ready(function(){
           post_section.append(post_card);
           // post_section.append(post_card);
         }
-
-
       });
+      
    }
    // getKey();
    add_new_post();

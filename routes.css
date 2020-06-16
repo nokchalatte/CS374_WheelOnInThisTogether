@@ -38,6 +38,10 @@ a{
   width: 100%;
 }
 
+.container-fluid {
+  margin: 0;
+}
+
 .description-list{
   font-size: 16px;
   margin: 0 0 5px 20px;

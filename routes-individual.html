@@ -27,7 +27,9 @@
           <h1><span class="icon-menu" id='sideBarOpen'></span></h1>
         </div>
         <div class="col-md-2" id="logo">
-          <b><center>WheelOn</center></b>
+          <b>
+            <center>WheelOn</center>
+          </b>
         </div>
         <div class="col-md" style="margin-top: 30px; font-size: 16; color: #1971C2;" align="right">
           <span class="user-circle" style="cursor: pointer;"></span>
@@ -40,92 +42,149 @@
     <ul></ul>
   </div>
 
-<!-- Main card -->
-<div class="container" id="routes-individual-main">
-  <div class="route-individual-title">
-    <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
-    <h2 id="card-individual-title"></h2>
+  <!-- Main card -->
+  <div class="container" id="routes-individual-main">
+    <div class="route-individual-title">
+      <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
+      <h2 id="card-individual-title"></h2>
+    </div>
+    <div class="card route-card-individual">
+      <span class=icon-like aria-hidden="true" id="heart-this"></span>
+      <div class="individual-created-by">
+        <p class="username-created">Created by</p>
+        <div class="username-circle" id="username-circle-individual"></div>
+        <div class="username" id="username-individual">
+          <p id="card-individual-username"></p>
+        </div>
+      </div>
+      <div class="individual-likes">
+        <span class=icon-like aria-hidden="true" id="heart-number"></span>
+        <small class="number-of-likes" id="card-individual-likes"></small>
+      </div>
+      <div class="individual-description">
+        <h3>DESCRIPTION</h3>
+        <ol>
+          <li class="description-list" id="card-individual-list-1"></li>
+          <li class="description-list" id="card-individual-list-2"></li>
+          <li class="description-list" id="card-individual-list-3"></li>
+        </ol>
+      </div>
+      <div class="individual-landmarks">
+        <h3>LANDMARKS</h3>
+        <p id="card-individual-landmarks"></p>
+      </div>
+      <div class="individual-facilities">
+        <h3>FACILITIES</h3>
+        <!-- Bootstrap Collapse - Accordion -->
+        <div class="accordion" id="individualFacilities">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  W
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Collapsible Group Item #2
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Collapsible Group Item #3
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="individual-pictures">
+        <h3>PICTURES</h3>
+      </div>
+    </div>
+
+    <!-- Lists -->
+    <div class="addList">
+      <h4>Add to My List</h4>
+    </div>
+    <div class="card route-list">
+      <div class="route-my-list">
+        <ul class="route-list-lists">
+          <li class="my-list-item">MY FAVORITE PLACE</li>
+          <li class="my-list-item">HANGOUT</li>
+          <li class="my-list-item" id="my-list-last">STUDY</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
+        authDomain: "wheeloninthistogether123.firebaseapp.com",
+        databaseURL: "https://wheeloninthistogether123.firebaseio.com",
+        projectId: "wheeloninthistogether123",
+        storageBucket: "wheeloninthistogether123.appspot.com",
+        messagingSenderId: "728495178731",
+        appId: "1:728495178731:web:06792b904ccd5693b2cfae",
+        measurementId: "G-2SRFF7XTB2"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <!-- Javascript -->
+    <script src="routes.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var location = window.location.hash;
+        var splithash = location.split('#');
+        var card_id = splithash[1];
+        fillPage(card_id);
+      })
+    </script>
   </div>
-  <div class="card route-card-individual">
-    <span class=icon-like aria-hidden="true" id="heart-this"></span>
-    <div class="individual-created-by">
-      <p class="username-created">Created by</p>
-      <div class="username-circle" id="username-circle-individual"></div>
-      <div class="username" id="username-individual"><p id="card-individual-username"></p></div>
-    </div>
-    <div class="individual-likes">
-      <span class=icon-like aria-hidden="true" id="heart-number"></span>
-      <small class="number-of-likes" id="card-individual-likes"></small>
-    </div>
-    <div class="individual-description">
-      <h3>DESCRIPTION</h3>
-      <ol>
-        <li class="description-list" id="card-individual-list-1"></li>
-        <li class="description-list" id="card-individual-list-2"></li>
-        <li class="description-list" id="card-individual-list-3"></li>
-      </ol>
-    </div>
-    <div class="individual-landmarks">
-      <h3>LANDMARKS</h3>
-      <p id="card-individual-landmarks"></p>
-    </div>
-    <div id="individual-pictures">
-      <h3>PICTURES</h3>
-    </div>
-  </div>
-
-  <!-- Lists -->
-  <div class="addList">
-    <h4>Add to My List</h4>
-  </div>
-  <div class="card route-list">
-    <div class="route-my-list">
-      <ul class="route-list-lists">
-        <li class="my-list-item">MY FAVORITE PLACE</li>
-        <li class="my-list-item">HANGOUT</li>
-        <li class="my-list-item" id="my-list-last">STUDY</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
-
-  <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
-    authDomain: "wheeloninthistogether123.firebaseapp.com",
-    databaseURL: "https://wheeloninthistogether123.firebaseio.com",
-    projectId: "wheeloninthistogether123",
-    storageBucket: "wheeloninthistogether123.appspot.com",
-    messagingSenderId: "728495178731",
-    appId: "1:728495178731:web:06792b904ccd5693b2cfae",
-    measurementId: "G-2SRFF7XTB2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  </script>
-
-  <!-- Javascript -->
-  <script src="routes.js"></script>
-  <script type="text/javascript">
-    $( document ).ready(function() {
-      var location = window.location.hash;
-      var splithash = location.split('#');
-      var card_id = splithash[1];
-      fillPage(card_id);
-    })
-  </script>
-</div>
 
 </body>
 

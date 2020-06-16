@@ -24,12 +24,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="forum_post.css"> -->
     <link rel="stylesheet" href="forum_post.css">
     <link rel="stylesheet" href="styleGuide.css">
     <link rel="stylesheet" href="topbar.css" type="text/css">
 </head>
 <body>
-	<div class="outside_topbar">
+	<!-- <div class="outside_topbar">
 			<div class="topbar">
 				<div class="row">
 					<div class="col-md-1">
@@ -43,8 +44,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="sidebar">
+		</div> -->
+		<!-- <div class="sidebar">
 			<ul>
 				<li>
 					<span class="col-md-2"><b> WheelOn </b></span>
@@ -56,7 +57,7 @@
 				<li class="options">Rate</li>
 				<li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>
 			</ul>
-		</div>
+		</div> -->
 	<div id="all_items">
 		<div class="container">
 			<a href="forum_homepage.html" id="back_home" class="hyperlinks">BACK TO FORUM PAGE</a>
@@ -68,15 +69,16 @@
 			<div class="username_info row">
 				<span class="user-circle"></span>
 				<label class="username">Username</label>
+				<button class="heart_button">Like Post</button>
 				<!-- <span id="main_like" class="icon-like icon like_post"></span> -->
 			</div>
 			<p class="content_post">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p>
 			
 			<div class="reply_like">
 				<span class="icon-comment icon"></span>
-	            <span id="total_like" class="like-number"> 0 Replies </span>
+	            <span id="total_replies" class="like-number"> 0 Replies </span>
 	            <span class="icon-like icon"></span>
-	            <span class="like-number"> 0 Likes </span>
+	            <span id="total_hearts" class="like-number"> 0 Likes </span>
 			</div>
 
 			<div class="your_comment">
@@ -90,30 +92,38 @@
 		<h4 class="number_replies">0 Replies</h4>
 		<div class="comment_container">
 			<!-- <h4 class="number_replies">10 Replies</h4> -->
-			<div class="container comment_card"> 
+			<!-- <div class="container comment_card"> 
 				<h3 class="empty_comment">Be the First to Comment!</h3>
-				<!-- div class="user_comment card">
+				div class="user_comment card">
 				<div class="username_info row">
 					<span class="user-circle"></span>
 					<label class="username">Username</label>
 				</div>
 				<p class="comment_content">I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible?</p>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="container comment_card">
 				<div class="user_comment card ">
 				<div class="username_info">
 					<span class="user-circle"></span>
 					<label class="username">Username</label>
+					<button class="float-right delete_comment_button">Delete</button>
+					<!-- <svg class="bi bi-trash-fill float-right" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+</svg> -->
 				</div>
 				<p class="comment_content"> I’m having trouble with finding food around here. Hello I’m a new student here and I’m not that familiar with the campus, do you guys have recommended places to go to that’s accessible? </p>
 				</div>
-			</div> -->
+			</div>
 		</div>
+
+		<!-- <div class="alert">
+			<p>You have succesfully posted a comment!</p>
+		</div> -->
 	</div>
 
-	<script src="forum_post.js"></script>
-	<script src="topbar.js"></script>
+	<script src="forum_post_cleaned.js"></script>
+	<!-- <script src="topbar.js"></script> -->
 </body>
 </html>

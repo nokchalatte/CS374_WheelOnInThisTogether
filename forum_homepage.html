@@ -84,7 +84,7 @@
 
 						<div class="form-group" id="drop_category">
 							<select name="topic" id="select_category">
-								<option value="1">All</option>
+								<!-- <option value="1">All</option> -->
 								<option value="2">Advice</option>
 								<option value="3">Health</option>
 								<option value="4">Exercise</option>
@@ -99,7 +99,13 @@
 				</div>
 				
 				<div id="post_container">
-					<h4 id="empty_posts">Be the first to Ask!</h4>
+					<!-- loading part -->
+					<div class="d-flex justify-content-center" >
+					  <div class="spinner-border" style="width: 3rem; height: 3rem;"role="status">
+					    <span class="sr-only">Loading...</span>
+					  </div>
+					</div>
+					<!-- <h4 id="empty_posts">Be the first to Ask!</h4> -->
 					<!-- <div class="card comment">
 						<div class="comment-info">
 							<label class="tag">Advice</label>
@@ -118,7 +124,7 @@
 						</div>
 					</div> -->
 
-					<!-- <div class="card comment">
+					<div class="card comment">
 						<div class="comment-info">
 							<label class="tag">Exercise</label>
 							<h2 class="disc_topic">Are there any clubs for people with moving disabilities?</h2>
@@ -135,7 +141,22 @@
 	                        <span class="like-number"> 24 Likes </span>
 	                        <span class="go_more"><a href="">READ MORE</a></span>
 						</div>
-					</div> -->
+					</div>
+					<nav aria-label="...">
+					  <ul class="pagination justify-content-center d-flex">
+					    <li class="page-item disabled">
+					      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+					    </li>
+					    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item" aria-current="page">
+					      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+					    </li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">Next</a>
+					    </li>
+					  </ul>
+					</nav>
 				</div>
 			</div>
 
@@ -145,11 +166,11 @@
 					<h3 id="tag_name">Tags</h3>
 					<div id="categories" class ="card">
 						<ul class="list-unstyled">
-							<li><a class="hyperlinks" href="">All</a></li>
-							<li><a class="hyperlinks" href="">Advice</a></li>
-							<li><a class="hyperlinks" href="">Health</a></li>
-							<li><a class="hyperlinks" href="">Exercise</a></li>
-							<li><a class="hyperlinks" href="">Other</a></li>
+							<li><a id="all_category" class="hyperlinks" href="forum_homepage.html">All</a></li>
+							<li><a id="advice_category" class="hyperlinks" href="forum_homepage_advice.html">Advice</a></li>
+							<li><a id="health_category" class="hyperlinks" href="forum_homepage_health.html">Health</a></li>
+							<li><a id="exercise_category" class="hyperlinks" href="forum_homepage_exercise.html">Exercise</a></li>
+							<li><a id="Other_category" class="hyperlinks" href="forum_homepage_other.html">Other</a></li>
 						</ul>
 					</div>
 				</div>
@@ -157,7 +178,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="forum_homepage.js"></script>
+	<script src="forum_homepage_cleaned.js"></script>
 	<script src="topbar.js"></script>
 	<script src="sidebar.js"></script>
 </body>

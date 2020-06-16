@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forum New Mainpage</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="forum_mainpage.css" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-10 all-items">
+				<h1>Forum Page</h1>
+				<!-- <h3>Make Post Card</h3> -->
+				<div class="card">
+				  <!-- <h5 class="card-header">Create Post</h5> -->
+				  <div class="card-body make_post_card">
+				    <!-- <h5 class="card-title"></h5>
+				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+				    <form>
+						<div class="form-group">
+						    <label for="exampleFormControlInput1">Post Title</label>
+						    <input class="form-control" placeholder="Enter topic here"id="exampleFormControlInput1">
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleFormControlTextarea1">Post Content</label>
+					    <textarea placeholder="What's on your mind?" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					  </div>
+					</form>
+					<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Category
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Action</a>
+					    <a class="dropdown-item" href="#">Another action</a>
+					    <a class="dropdown-item" href="#">Something else here</a>
+					  </div>
+					  <a href="#" class="btn btn-primary float-right">Create Post</a>
+					</div>
+				  </div>
+				</div>
+				<!-- <h3>Forum Card</h3> -->
+				<div class="total_comments">
+					<div class="card text-center each_post">
+		 			<div class="card-body">
+		    			<h5 class="card-title text-left"></h5>
+		    			<h5 class="text-left"><span class="badge category_badge">Advice</span></h5>
+		    			<h5 class="topic_name float-left d-sm-block d-md-block d-lg-block d-xl-block">How can I go to N1 From Areumgwan?</h5>
+				    	<!-- <h5 class="text-left"> How Can I go to N1 From Areumgwan?</h5> -->
+				   		<p class="card-text float-left d-sm-block d-md-block d-lg-block d-xl-block">With supporting text below as a natural lead-in to additional content.</p>
+		 			</div>
+		  			<div class="card-footer text-muted align-items-center">
+		    			<div class="float-left">
+				    		​<picture class="profile_pic">
+							  <source srcset="duck.jpg" type="image/svg+xml">
+							  <img src="duck.jpg" width="32em" height="32em" class="rounded-circle profile-pic" alt="...">
+							</picture>
+							<h6 class="d-inline">Username</h6>
+				    		<svg class="bi bi-chat-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+							</svg>
+							<h6 class="d-inline"> 10 Replies</h6>
+							<svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+							</svg>
+							<h6 class="d-inline"> 15 Likes</h6>
+		    			</div>
+		    			<a href="#" class="btn btn-primary float-right btn-sm">Read Post</a>
+		 			</div>
+					</div>
+
+					<!-- <h3>Forum Card</h3> -->
+					<div class="card text-center each_post">
+			 			<div class="card-body">
+			    			<h5 class="card-title text-left"></h5>
+			    			<h5 class="text-left"><span class="badge badge badge-primary">Advice</span>   How can I go to N1 From Areumgwan?</h5>
+					    	<!-- <h5 class="text-left"> How Can I go to N1 From Areumgwan?</h5> -->
+					   		<p class="card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
+			 			</div>
+			  			<div class="card-footer text-muted align-items-center">
+			    			<div class="float-left">
+					    		​<picture class="profile_pic">
+								  <source srcset="duck.jpg" type="image/svg+xml">
+								  <img src="duck.jpg" width="32em" height="32em" class="rounded-circle profile-pic" alt="...">
+								</picture>
+								<h6 class="d-inline">Username</h6>
+					    		<svg class="bi bi-chat-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+								</svg>
+								<h6 class="d-inline"> 10 Replies</h6>
+								<svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+	  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+								<h6 class="d-inline"> 15 Likes</h6>
+			    			</div>
+			    			<a href="#" class="btn btn-primary float-right btn-sm">Read Post</a>
+			 			</div>
+					</div>
+
+					<!-- <h3>Forum Card</h3> -->
+					<div class="card text-center each_post">
+			 			<div class="card-body">
+			    			<h5 class="card-title text-left"></h5>
+			    			<h5 class="text-left"><span class="badge badge badge-primary">Advice</span>How can I go to N1 From Areumgwan?</h5>
+					    	<!-- <h5 class="text-left"> How Can I go to N1 From Areumgwan?</h5> -->
+					   		<p class="d-block card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
+			 			</div>
+			  			<div class="card-footer text-muted align-items-center">
+			    			<div class="float-left">
+					    		​<picture class="profile_pic">
+								  <source srcset="duck.jpg" type="image/svg+xml">
+								  <img src="duck.jpg" width="32em" height="32em" class="rounded-circle profile-pic" alt="...">
+								</picture>
+								<h6 class="d-inline">Username</h6>
+					    		<svg class="bi bi-chat-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+								</svg>
+								<h6 class="d-inline"> 10 Replies</h6>
+								<svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+	  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+								<h6 class="d-inline"> 15 Likes</h6>
+			    			</div>
+			    			<a href="#" class="btn btn-primary float-right btn-sm">Read Post</a>
+			 			</div>
+					</div>
+
+					<!-- <h3>Forum Card</h3> -->
+					<div class="card text-center each_post">
+			 			<div class="card-body">
+			    			<h5 class="card-title text-left"></h5>
+			    			<h5 class="text-left"><span class="badge badge badge-primary">Advice</span>How can I go to N1 From Areumgwan?</h5>
+					    	<!-- <h5 class="text-left"> How Can I go to N1 From Areumgwan?</h5> -->
+					   		<p class="d-block card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
+			 			</div>
+			  			<div class="card-footer text-muted align-items-center">
+			    			<div class="float-left">
+					    		​<picture class="profile_pic">
+								  <source srcset="duck.jpg" type="image/svg+xml">
+								  <img src="duck.jpg" width="32em" height="32em" class="rounded-circle profile-pic" alt="...">
+								</picture>
+								<h6 class="d-inline">Username</h6>
+					    		<svg class="bi bi-chat-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+								</svg>
+								<h6 class="d-inline"> 10 Replies</h6>
+								<svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="gray" xmlns="http://www.w3.org/2000/svg">
+	  								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+								<h6 class="d-inline"> 15 Likes</h6>
+			    			</div>
+			    			<a href="#" class="btn btn-primary float-right btn-sm">Read Post</a>
+			 			</div>
+					</div>
+				</div>
+
+				<!-- <h3>Pagination</h3> -->
+				<nav aria-label="current_page">
+				  <ul class="pagination justify-content-center">
+				    <li class="page-item disabled">
+				      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+				    </li>
+				    <li class="page-item"><a class="page-link" href="#">1</a></li>
+				    <li class="page-item active" aria-current="page">
+				      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+				    </li>
+				    <li class="page-item"><a class="page-link" href="#">3</a></li>
+				    <li class="page-item">
+				      <a class="page-link" href="#">Next</a>
+				    </li>
+				  </ul>
+				</nav>
+			</div>
+			<div class="col-2">
+				<div class="categories_card">
+					<h2>Categories</h2>
+					<div class="list-group shadow">
+					  <button type="button" class="list-group-item list-group-item-action">
+					    All
+					  </button>
+					  <button type="button" class="list-group-item list-group-item-action">Advice</button>
+					  <button type="button" class="list-group-item list-group-item-action active">Events</button>
+					  <button type="button" class="list-group-item list-group-item-action">Lifestyle</button>
+					  <button type="button" class="list-group-item list-group-item-action">Others</button>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div> 
+</body>
+</html>

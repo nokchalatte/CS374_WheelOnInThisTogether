@@ -1,0 +1,61 @@
+/*For Post Card (Nabila)*/
+/*===========================================*/
+.post_card{
+	border-radius: 10px;
+	border: none;
+}
+
+#user_comment_fill{
+	border-radius: 10px;
+}
+
+.reply_amount{
+	color: #74C0FC;
+}
+
+.like_amount{
+	color: #74C0FC;
+}
+
+.poster_name{
+	text-transform: uppercase;
+	color: #343A40;
+}
+
+.asks{
+	color: #868E96;
+}
+
+/*===========================================*/
+
+.back-to-mainpage{
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: #1971C2;
+}
+
+/*For tags*/
+/*===========================================*/
+.category-tags{
+	text-transform: uppercase;
+	/*background-color: rgba(40,167,69,0.3);*/
+	/*color:#28a745;*/
+	background-color: #D0EBFF;
+	color:#1971C2;
+}
+/*===========================================*/
+
+.comment_from_user{
+	border-radius: 10px;
+	border: none;
+}
+
+.username{
+	text-transform: uppercase;
+	color: #343A40;
+}
+
+.answered{
+	color: #868E96;
+	text-
+}

@@ -44,9 +44,10 @@ From there, we change the items such as the post title, category, and content ac
 
 You can find the rating and reviews of a certain restaurant. The rating homepage is a search page, where user can input the restaurant name, and it will show the result as rating card. Otherwise, if there is no corresponding review, it will show the "No result found".
 
+In this prototype, we prepared the review for a hypothetical restaurant called "buff-eat". Please use this restaurant during testing procedure. Add new restaurant, unfortunately, has not been implemented
+
 When a rating card is clicked, it will lead to the restaurant review page. The page consists of the the restaurant info, rating, and user reviews. There are three subratings, "Facility", "Accessibility", and "Safety". 
 
 User can input their review using "RATE YOUR EXPERIENCE" button. It will open a new popup, where use can input their ratings and comment. The review can be only submitted if all the rating is filled. Otherwise, a warning message will appear to remind user to fill all the rating. 
-
 
 Once the review is submitted, a feedback message will appear, telling that it has been successfully posted, and the new review will appear on the top of the comment section

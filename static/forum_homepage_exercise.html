@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Forum_homepage</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleGuide.css" type="text/css">
+    <!-- <link rel="stylesheet" href="rates.css" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+	<!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleGuide.css">
+    <link rel="stylesheet" href="styles/forum_homepage_styles.css" type="text/css">
+    <link rel="stylesheet" href="topbar.css" type="text/css">
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body style="background-color: #F1F3F5">
+	<div class="outside_topbar">
+			<div class="topbar">
+				<div class="row">
+					<div class="col-md-1">
+						<span class="icon-menu" id='sideBarOpen'></span>
+					</div>
+					<div class="col-md-2" id="logo">
+						<b><center>WheelOn</center></b>
+					</div>
+					<div class="col-md" style="margin-top: 20px; font-size: 16; color: #1971C2;" align="right">
+						<span> USERNAME </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar">
+			<ul>
+				<li>
+					<span class="col-md-2"><b> WheelOn </b></span>
+					<span class="icon-menu" id="sideBarClose"></span>
+				</li>
+				<br>
+				<li class="options">Forum</li>
+				<li class="options">Routes</li>
+				<li class="options">Rate</li>
+				<li class="copyright"> WheelOnInThisTogether <br> Copyright 2020 </li>
+			</ul>
+		</div>
+	<div class="all_items">
+		<div class="container">
+		<div class="row">
+			<!-- Left Side of -->
+			<div id="left_side" class = "col-md-10 col-sm-10 col-xs-10">
+				<h1 id="forum_title">Forum Page</h1>
+
+				<div id="create_post" class = "card">
+					<div class="form-group">
+						<label for="topic_input" class="input_label" style="color:#1971C2">Post Title</label>
+						<input id="topic_input" class="input_default" type="message" placeholder="Write your question title here...">
+						<label for="user_input" class="input_label" style="color:#1971C2">Post Content</label>
+						<textarea  id="user_input" placeholder="What's on your mind?"></textarea>
+					</div>
+				
+					<!-- Inline Forms -->
+					<form id="under_input">
+						<div class="form-group" id="post_topic">
+							<label for="topic" class="topic_names">Topic: </label>
+						</div>
+
+						<div class="form-group" id="drop_category">
+							<select name="topic" id="select_category">
+								<!-- <option value="1">All</option> -->
+								<option value="2">Advice</option>
+								<option value="3">Health</option>
+								<option value="4">Exercise</option>
+								<option value="5">Other</option>
+							</select>
+						</div>
+
+						<!-- <div class="form-group" id="create_button"> -->
+							<button id="post_button" class="default_primary">Post</button>
+						<!-- </div> -->
+					</form>
+				</div>
+				
+				<div id="post_container">
+					<!-- loading part -->
+					<!-- <div class="d-flex justify-content-center" >
+					  <div class="spinner-border" style="width: 3rem; height: 3rem;"role="status">
+					    <span class="sr-only">Loading...</span>
+					  </div>
+					</div> -->
+					<h4 id="empty_posts">Be the first to Ask!</h4>
+					<!-- <div class="card comment">
+						<div class="comment-info">
+							<label class="tag">Advice</label>
+							<h2 class="disc_topic">How do you eat without friends?</h2>
+							<p class="disc_content">I’m having trouble with finding food around here.</p>
+						</div>
+						<div class="user-info row">
+	                    	<span class="user-circle"></span>
+	                    	<span class="username"> Username </span>
+	                        <div class="vertical-line"></div>
+	                        <span class="icon-comment-alt icon"></span>
+	                        <span class="comment-number"> 10 Replies </span>
+	                        <span class="icon-like icon"></span>
+	                        <span class="like-number"> 24 Likes </span>
+	                        <span class="go_more"><a href="">READ MORE</a></span>
+						</div>
+					</div> -->
+
+					<!-- <div class="card comment">
+						<div class="comment-info">
+							<label class="tag">Exercise</label>
+							<h2 class="disc_topic">Are there any clubs for people with moving disabilities?</h2>
+							<p class="disc_content">I’m getting tired of saying inside, I want to socialize.</p>
+						</div>
+
+						<div class="user-info row">
+	                    	<span class="user-circle"></span>
+	                    	<span class="username"> Username </span>
+	                        <div class="vertical-line"></div>
+	                        <span class="icon-comment-alt icon"></span>
+	                        <span class="comment-number"> 10 Replies </span>
+	                        <span class="icon-like icon"></span>
+	                        <span class="like-number"> 24 Likes </span>
+	                        <span class="go_more"><a href="">READ MORE</a></span>
+						</div>
+					</div> -->
+					<nav aria-label="...">
+					  <ul class="pagination justify-content-center d-flex">
+					    <li class="page-item disabled">
+					      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+					    </li>
+					    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item" aria-current="page">
+					      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+					    </li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item">
+					      <a class="page-link" href="#">Next</a>
+					    </li>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+
+			<!-- Right side of screen -->
+			<div id="right_side" class="col-md-2 col-sm-2 col-xs-2">
+				<div class="sticky_item">
+					<h3 id="tag_name">Tags</h3>
+					<div id="categories" class ="card">
+						<ul class="list-unstyled">
+							<li><a id="all_category" class="hyperlinks" href="forum_homepage.html">All</a></li>
+							<li><a id="advice_category" class="hyperlinks" href="forum_homepage_advice.html">Advice</a></li>
+							<li><a id="health_category" class="hyperlinks" href="forum_homepage_health.html">Health</a></li>
+							<li><a id="exercise_category" class="hyperlinks" href="forum_homepage_exercise.html">Exercise</a></li>
+							<li><a id="Other_category" class="hyperlinks" href="forum_homepage_other.html">Other</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<script src="scripts/forum_homepage_exercise.js"></script>
+	<script src="topbar.js"></script>
+	<script src="sidebar.js"></script>
+</body>
+</html>

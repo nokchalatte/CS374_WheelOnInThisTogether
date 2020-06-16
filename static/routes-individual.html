@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Route #1</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="style/styleGuide.css" rel="stylesheet">
+  <link href="components.css" rel="stylesheet">
+  <link href="style/routes.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Main card -->
+  <div class="container" id="routes-individual-main">
+    <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
+    <div class="row">
+      <div class="col-md-9">
+        <h2 id="card-individual-title"></h2>
+      </div>
+      <div class="col-md-3">
+        <h4>Add to My List</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <span class=icon-like aria-hidden="true" id="heart-this"></span>
+            <div class="individual-created-by">
+              <p class="username-created">Created by</p>
+              <div class="username-circle"></div>
+              <div class="username" id="username-individual">
+                <p id="card-individual-username"></p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class=icon-like aria-hidden="true" id="heart-number"></span>
+            <small class="number-of-likes" id="card-individual-likes"></small>
+          </div>
+          <div class="card-body">
+            <h3>DESCRIPTION</h3>
+            <ol>
+              <li class="description-list" id="card-individual-list-1"></li>
+              <li class="description-list" id="card-individual-list-2"></li>
+              <li class="description-list" id="card-individual-list-3"></li>
+            </ol>
+          </div>
+          <div class="card-body">
+            <h3>LANDMARKS</h3>
+            <p id="card-individual-landmarks"></p>
+          </div>
+          <div class="card-body" id="individualFacilities">
+            <h3>FACILITIES</h3>
+            <!-- Bootstrap Collapse - Accordion -->
+            <div class="accordion" id="accordionFacilities">
+
+              <div class="card" id="facilitiesRamp">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Ramp
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionFacilities">
+                  <div class="card-body" id="rampContents">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="facilitiesElevator">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Elevator
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionFacilities">
+                  <div class="card-body" id="elevatorContents">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="facilitiesWheelchair">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Wheelchair
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionFacilities">
+                  <div class="card-body" id="wheelchairContents">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body" id="individual-pictures">
+            <h3>PICTURES</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <!-- Lists -->
+        <div class="categories_card" id="addToMyListCard">
+          <div class="list-group shadow">
+            <button type="button" class="list-group-item list-group-item-action">MY FAVORITE PLACE</button>
+            <button type="button" class="list-group-item list-group-item-action">HANGOUT</button>
+            <button type="button" class="list-group-item list-group-item-action">STUDY</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
+      authDomain: "wheeloninthistogether123.firebaseapp.com",
+      databaseURL: "https://wheeloninthistogether123.firebaseio.com",
+      projectId: "wheeloninthistogether123",
+      storageBucket: "wheeloninthistogether123.appspot.com",
+      messagingSenderId: "728495178731",
+      appId: "1:728495178731:web:06792b904ccd5693b2cfae",
+      measurementId: "G-2SRFF7XTB2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <!-- Javascript -->
+  <script src="scripts/routes.js"></script>
+
+  <script type="text/javascript">
+    //Thank you StackOverflow (stackoverflow.com/questions/29364121/passing-variable-when-opening-another-html-page-using-javascript,
+    //accessed on June 9) for using hash to transfer variables between pages
+    $(document).ready(function() {
+      var location = window.location.hash;
+      var splithash = location.split('#');
+      var card_id = splithash[1];
+      fillPage(card_id);
+    })
+  </script>
+
+</body>
+
+</html>
