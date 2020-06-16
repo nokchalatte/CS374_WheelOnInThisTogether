@@ -13,7 +13,7 @@ $(document).ready(function () {
 	firebase.initializeApp(firebaseConfig);
 
     $('.btn-primary').on('click', function () {
-    	if (this.innerHTML == "Check Out Other Posts") { window.open('forum_homepage_cleaned.html', '_self'); }
+    	if (this.innerHTML == "Check Out Other Posts") { window.open('forum_mainpage.html', '_self'); }
     	else if (this.innerHTML == "Check Out Other Places") { window.open('search_rate.html', '_self'); }
     	else if (this.innerHTML == "Find Best Directions") { 
     		var toPlace = document.getElementById('exampleFormControlTo');
