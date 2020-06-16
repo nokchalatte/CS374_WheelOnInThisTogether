@@ -3,58 +3,100 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Route #1</title>
+  <title>More information on routes!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link href="style/styleGuide.css" rel="stylesheet">
   <link href="components.css" rel="stylesheet">
+  <link href="style/navbar.css" rel="stylesheet">
   <link href="style/routes.css" rel="stylesheet">
 </head>
 
 <body>
 
+  <div class="wrapper"> <!-- navigation bar code (it will push your whole code down) -->
+      <nav class="navbar-fixed-top navbar-light bg-light"> <!-- topbar code -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button> &nbsp&nbsp&nbsp&nbsp
+              <a class="navbar-brand" href="#" style="color: #1971C2;">
+                  <img src="duck.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                  <b>WheelOn The New Era 2.0</b>
+              </a>
+
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Routes</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Rating</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Forum</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <a class="navbar-brand" href="#" style="color: #1971C2;">
+                  <img src="duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
+                  <h6 class="d-inline">WHEELIE WONKA</h6>
+              </a>
+          </nav>
+      </nav>
+
+      <nav id="sidebar"> <!-- sidebar code -->
+          <div class="sidebar-header">
+              <h1>WheelOn</h1>
+              <div class="sidebar-content">
+                  <ul class="list-unstyled components">
+                      <li class="options"><h4>Routes</h4></li>
+                      <li class="options"><h4>Rating</h4></li>
+                      <li class="options"><h4>Forum</h4></li>
+                  </ul>
+                  <h6 class="sidebarClose"> Close Sidebar </h6>
+                  <h6 style="color: rgba(0,0,0,0.5);"> WheelOnInThisTogether Copyright 2020</h6>
+              </div>
+          </div>
+      </nav>
+  </div>
+
   <!-- Main card -->
   <div class="container" id="routes-individual-main">
     <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
-    <div class="row">
-      <div class="col-md-9">
-        <h2 id="card-individual-title"></h2>
-      </div>
-      <div class="col-md-3">
-        <h4>Add to My List</h4>
-      </div>
-    </div>
+    <h2 id="card-individual-title"></h2>
 
     <div class="row">
       <div class="col-md-9">
-        <div class="card">
-          <div class="card-body">
-            <span class=icon-like aria-hidden="true" id="heart-this"></span>
+        <div class="card post_card shadow bg-white p-4 m-0">
+          <div class="card-body p-0">
+            <svg class="bi bi-heart float-right" width="2em" height="2em" viewBox="0 0 16 16" fill="#74C0FC" xmlns="http://www.w3.org/2000/svg">
+      				<path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+      		  </svg>
             <div class="individual-created-by">
-              <p class="username-created">Created by</p>
-              <div class="username-circle"></div>
-              <div class="username" id="username-individual">
-                <p id="card-individual-username"></p>
-              </div>
+              <p class="username-created mb-1">Created by</p>
+              <img src="icons/person-circle.svg" class="ml-2" width='24' height='24'>
+              <p class="mb-1" id="card-individual-username"></p>
             </div>
           </div>
-          <div class="card-body">
-            <span class=icon-like aria-hidden="true" id="heart-number"></span>
-            <small class="number-of-likes" id="card-individual-likes"></small>
+          <div class="card-body p-0">
+            <img src="icons/heart.svg" id="heart-number">
+            <p class="number-of-likes" id="card-individual-likes"></p>
           </div>
-          <div class="card-body">
+          <div class="card-body p-0 mt-2">
             <h3>DESCRIPTION</h3>
-            <ol>
+            <ol class="pl-3">
               <li class="description-list" id="card-individual-list-1"></li>
               <li class="description-list" id="card-individual-list-2"></li>
               <li class="description-list" id="card-individual-list-3"></li>
             </ol>
           </div>
-          <div class="card-body">
+          <div class="card-body p-0 mt-2">
             <h3>LANDMARKS</h3>
             <p id="card-individual-landmarks"></p>
           </div>
-          <div class="card-body" id="individualFacilities">
+          <div class="card-body p-0 mt-2" id="individualFacilities">
             <h3>FACILITIES</h3>
             <!-- Bootstrap Collapse - Accordion -->
             <div class="accordion" id="accordionFacilities">
@@ -103,7 +145,7 @@
               </div>
             </div>
           </div>
-          <div class="card-body" id="individual-pictures">
+          <div class="card-body p-0 mt-4" id="individual-pictures">
             <h3>PICTURES</h3>
           </div>
         </div>
@@ -111,8 +153,9 @@
 
       <div class="col-md-3">
         <!-- Lists -->
+        <h4>Add to My List</h4>
         <div class="categories_card" id="addToMyListCard">
-          <div class="list-group shadow">
+          <div class="list-group shadow" id="addToMyListCardLists">
             <button type="button" class="list-group-item list-group-item-action">MY FAVORITE PLACE</button>
             <button type="button" class="list-group-item list-group-item-action">HANGOUT</button>
             <button type="button" class="list-group-item list-group-item-action">STUDY</button>
@@ -156,6 +199,7 @@
 
   <!-- Javascript -->
   <script src="scripts/routes.js"></script>
+  <script src="scripts/navbar.js"></script>
 
   <script type="text/javascript">
     //Thank you StackOverflow (stackoverflow.com/questions/29364121/passing-variable-when-opening-another-html-page-using-javascript,

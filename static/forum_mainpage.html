@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style/forum_mainpage.css" type="text/css">
     <link rel="stylesheet" href="style/navbar.css" type="text/css">
+    <link rel="stylesheet" href="style/styleGuide.css" type="text/css">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -29,7 +30,6 @@
 
     <!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
 </head>
 <body>
 	<div class="wrapper"> <!-- navigation bar code (it will push your whole code down) -->
@@ -46,7 +46,7 @@
 	            <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	                <ul class="navbar-nav">
 	                    <li class="nav-item">
-	                        <a class="nav-link" href="#">Routes<span class="sr-only">(current)</span></a>
+	                        <a class="nav-link" href="#">Routes</a>
 	                    </li>
 	                    <li class="nav-item">
 	                        <a class="nav-link" href="#">Rating</a>
@@ -83,47 +83,66 @@
 	<div class="container mt-4">
 		<div class="row">
 			<div class="col-10 all-items">
-				<!-- <h1>Forum Page</h1> -->
-				<!-- <h3>Make Post Card</h3> -->
-				<div class="card">
-				  <!-- <h5 class="card-header">Create Post</h5> -->
-				  <div class="card-body make_post_card">
-				    <!-- <h5 class="card-title"></h5>
-				    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-				    <form>
-						<div class="form-group">
-						    <label for="exampleFormControlInput1">Post Title</label>
-						    <input id="topic_input" class="form-control input_default" placeholder="Enter topic here"id="exampleFormControlInput1">
-					  </div>
-					  <div class="form-group">
-					    <label for="exampleFormControlTextarea1">Post Content</label>
-					    <textarea id="user_input" placeholder="What's on your mind?" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-					  </div>
+				
+				<h2>Forum Page</h2>
+				<div class="card shadow border-0 p-4 routes-card">
+					<form>
+					    <div class="form-group routes-form">
+					      <label for="fromPlace">POST TITLE</label><br>
+					      <input placeholder="Enter topic here" class=" form-control input_default routes-input" id="topic_input">
+					    </div>
+					    <!-- <img src="../icons/arrow-down-up.svg" class="arrow-up-down float-right" alt="arrow-up-down-logo"> -->
+					    <div class="form-group">
+					      <label for="toPlace">POST CONTENT</label><br>
+					      <textarea id="user_input" placeholder="What's on your mind?" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					    </div>
+					    <!-- <button type="button" class="btn btn-primary">Add Route</button> -->
+					    <div class="dropdown">
+							<!-- <button id="select_category" class="btn btn-secondary dropdown-toggle pl-3 pr-3 pt-2 pb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Category
+							</button> -->
+							<!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">All</a>
+								<a class="dropdown-item" href="#">Advice</a>
+								<a class="dropdown-item" href="#">Exercise</a>
+								<a class="dropdown-item" href="#">Health</a>
+								<a class="dropdown-item" href="#">Other</a>
+							</div> -->
+							<!-- <div class="form-group">
+								<label for="toPlace">CATEGORY</label><br>
+							    <select name="topic" class="form-control select_category" id="dropdown-menu">
+							    	<option value="1">All</option>
+							      	<option value="2">Advice</option>
+									<option value="3">Health</option>
+									<option value="4">Exercise</option>
+									<option value="5">Other</option>
+							    </select>
+						 	</div> -->
+						 	<label for="topic" class="topic_names d-inline">Topic: </label>
+						 	<div class="form-group d-inline pl-3 pr-3 pt-2 pb-2" id="drop_category">
+								<select name="topic" id="select_category">
+									<!-- <option value="1">All</option> -->
+									<option value="2">Advice</option>
+									<option value="3">Health</option>
+									<option value="4">Exercise</option>
+									<option value="5">Other</option>
+								</select>
+							</div>
+							<a href="#" id="post_button" class="float-right default_primary our_buttons pl-3 pr-3 pt-2 pb-2 d-inline">Create Post</a>
+						</div>
 					</form>
-					<div class="dropdown">
-					  <button id="select_category" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Category
-					  </button>
-					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					    <a class="dropdown-item" href="#">Action</a>
-					    <a class="dropdown-item" href="#">Another action</a>
-					    <a class="dropdown-item" href="#">Something else here</a>
-					  </div>
-					  <a href="#" id="post_button" class="btn btn-primary float-right default_primary">Create Post</a>
-					</div>
-				  </div>
 				</div>
 
 				<div id="post_container">
+					<h6 class="text-center mt-5">Be the first to ask!</h6>
 					<!-- Forum Post Cards -->
-					<div class='card my-4 shadow border-0 whole_card'>
-						<div class="card-body">
+					<!-- <div class='card my-4 shadow border-0 whole_card'> -->
+						<!-- <div class="card-body">
 							<h5 class="card-title text-left"></h5>
 			    			<h5 class="text-left post_main_title mb-2"><span class="badge badge badge-primary category-tags p-2 mr-2">Advice</span>How can I go to N1 From Areumgwan?</h5>
-					    	<!-- <h5 class="text-left"> How Can I go to N1 From Areumgwan?</h5> -->
 					   		<p class="d-block card-text text-left">With supporting text below as a natural lead-in to additional content.</p>
-						  </div>
-						  <div class="card-footer">
+						  </div> -->
+						  <!-- <div class="card-footer">
 							<div class='row'>
 								<div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'>
 									<img src='duck.jpg' width="24em" height="24em" class="rounded-circle user-circle">
@@ -134,18 +153,18 @@
 								<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'>
 									<img src='../icons/chat.svg' class="comment_icon" width='18' height='18'>
 									<span class='ml-2 mr-3'> 10 Replies </span>
-									<img src='../icons/heart.svg' width='18' height='18'>
+									<img src='../icons/heart.svg' class="comment_icon" width='18' height='18'>
 									<span class='mx-2 likes-and-comment'> 24 Likes </span>
-									<a href="#" class="btn btn-primary float-right btn-sm">Read Post</a>
+									<a href="#" class="btn btn-primary float-right btn-sm read_post">Read Post</a>
 								</div>
 							</div>
-						  </div>
-					</div>
+						  </div> -->
+					<!-- </div> -->
 				</div>
 
 
 				<!-- <h3>Pagination</h3> -->
-				<nav aria-label="current_page">
+				<!-- <nav aria-label="current_page">
 				  <ul class="pagination justify-content-center">
 				    <li class="page-item disabled">
 				      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -159,11 +178,11 @@
 				      <a class="page-link" href="#">Next</a>
 				    </li>
 				  </ul>
-				</nav>
+				</nav> -->
 			</div>
 			<div class="col-2">
 				<div class="categories_card">
-					<h3>Category</h3>
+					<h3 class="">Category</h3>
 					<div class="list-group shadow">
 					  <button type="button" class="list-group-item list-group-item-action active">
 					    <a class="link_color" href="forum_mainpage.html">All</a>
@@ -178,5 +197,6 @@
 		</div>
 	</div> 
 	<script src="scripts/forum_homepage_cleaned.js"></script>
+	<script src="scripts/navbar.js"></script>
 </body>
 </html>

@@ -70,7 +70,6 @@ async function display_autofill(rest_db) {
 async function get_rest_names() {
     try {
         var rest_names = []
-        var rest 
         firebase.database().ref('restaurant/').once('value', function(snapshot) {
             snapshot.forEach(function(data) {
                 rest_names.push(data.val().name)

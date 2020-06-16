@@ -1,20 +1,108 @@
+#addToMyListCard{
+  padding-top:8px;
+}
+
+#addToMyListCardLists{
+  width: 100%;
+}
+
+#card-individual-likes{
+  display: inline-block;
+  color: #1971C2;
+}
+
+#card-individual-username{
+  display: inline-block;
+}
+
+.chevron-icon{
+  filter: invert(32%) sepia(46%) saturate(2028%) hue-rotate(186deg) brightness(98%) contrast(91%);
+  /* Thank you https://codepen.io/sosuke/pen/Pjoqqp for computing the filter needed */
+}
+
+#icon-ramp{
+  font-size: 30px;
+  padding-right: 8px;
+  display:table-cell;
+  vertical-align:top;
+}
+
+#icon-elevator{
+  font-size: 24px;
+  padding-right: 4px;
+  display:table-cell;
+  vertical-align:top;
+}
+
+#icon-wheelchair{
+  font-size: 32px;
+  padding-right: 8px;
+  display:table-cell;
+  vertical-align:top;
+}
+
+#individual-pictures{
+  margin-top: 16px;
+}
+
 #no_result{
   position: absolute;
   top: 260px;
   left: 65%;
 }
 
+.place-picture{
+  height: 156px;
+  margin: 12px 4px 0 0;
+  display: inline-block;
+}
+
 .route-card{
-  width: 24.167%;
-  height: 480px;
-  position: absolute;
+  max-height: 500px;
   overflow: hidden;
 }
 
-.routes-card{
-  width: 35%;
+.route-card-contents{
+  max-height: 120px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.route-card-icons{
+  width: auto;
+  height: auto;
+  display: table;
+  padding-left: 24px;
+}
+
+.route-card-username, .route-number-likes{
+  display: inline-block;
+  padding-left: 8px;
+}
+
+/* Many thanks to https://stackoverflow.com/questions/38550507/centre-and-crop-an-image-inside-a-div
+  (accessed on June 16) for cropping and centering an image inside a div */
+
+.route-card-image{
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-style: none;
+}
+
+.route-card-img{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  margin: auto;
 }
 
 .routes-input{
   width: 100%;
+}
+
+.username-created{
+  display: inline-block;
 }

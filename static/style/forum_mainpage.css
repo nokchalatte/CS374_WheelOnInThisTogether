@@ -1,3 +1,7 @@
+body{
+	background-color: #F1F3F5;
+}
+
 /*Tags and “add to my list” cards → Nabila*/
 .categories_card{
 	width:100%;
@@ -102,3 +106,35 @@
 .link_color{
 	color:#1971C2;
 }
+
+/*For the post title*/
+.routes-input{
+  width: 100%;
+}
+
+#select_category{
+	background-color: white;
+	color: #495057;
+	border-color: #495057;
+	border-radius: 10px;
+	text-transform: uppercase;
+}
+
+.dropdown-item{
+	text-transform: uppercase;
+}
+
+.dropdown-menu{
+	border-radius: 10px;
+}
+
+.read_post{
+	background-color: #D0EBFF;
+	color: #1971C2;
+	/*border: none;*/
+	border-radius: 10px;
+	text-transform: uppercase;
+	border-color: #1971C2;
+}
+
+drop

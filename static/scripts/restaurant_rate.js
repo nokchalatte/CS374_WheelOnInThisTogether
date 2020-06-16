@@ -55,7 +55,7 @@ $(document).ready(function() {
             }, 5000);
         }
         else {
-            $(".icon-star-fill").attr("src", "../icons/star.svg")
+            $(".icon-star-fill").attr("src", "icons/star.svg")
             $(".icon-star-fill").removeClass("icon-star-fill").addClass("icon-star")
             turn_rating_on()
             $("#ratingModal").modal('hide')
@@ -82,27 +82,27 @@ $(document).ready(function() {
 
     function turn_rating_on() {
         $(".icon-star").hover(function() {
-            $(this).attr("src", "../icons/star-fill.svg")
+            $(this).attr("src", "icons/star-fill.svg")
             $(this).removeClass("icon-star").addClass("icon-star-fill")
             var star_val = parseInt($(this).data('value'))
             
             //Highlight all the required star
             $(this).parent().children().each(function() {
                 if ($(this).data('value') < star_val) {
-                    $(this).attr("src", "../icons/star-fill.svg")
+                    $(this).attr("src", "icons/star-fill.svg")
                     $(this).removeClass("icon-star").addClass("icon-star-fill")
                 }
             })
         // }
         }, function() {
-            $(this).attr("src", "../icons/star.svg")
+            $(this).attr("src", "icons/star.svg")
             $(this).removeClass("icon-star-fill").addClass("icon-star")
             var star_val = parseInt($(this).data('value'))
             
             //Remove the highlight of all the required star
             $(this).parent().children().each(function() {
                 if ($(this).data('value') < star_val) {
-                    $(this).attr("src", "../icons/star.svg")
+                    $(this).attr("src", "icons/star.svg")
                     $(this).removeClass("icon-star-fill").addClass("icon-star")
                 }
             })
@@ -111,7 +111,7 @@ $(document).ready(function() {
         //Store chosen value
         $(".icon-star").click(function() {
             $(this).off('mouseenter mouseleave')
-            $(this).attr("src", "../icons/star-fill.svg")
+            $(this).attr("src", "icons/star-fill.svg")
             $(this).removeClass("icon-star").addClass("icon-star-fill")
             var star_val = parseInt($(this).data('value'))
             var category = $(this).parent().attr('id')
@@ -119,10 +119,10 @@ $(document).ready(function() {
             $(this).parent().children().each(function() {
                 $(this).off('mouseenter mouseleave')
                 if ($(this).data('value') <= star_val) {
-                    $(this).attr("src", "../icons/star-fill.svg")
+                    $(this).attr("src", "icons/star-fill.svg")
                     $(this).removeClass("icon-star").addClass("icon-star-fill")
                 } else {
-                    $(this).attr("src", "../icons/star.svg")
+                    $(this).attr("src", "icons/star.svg")
                     $(this).removeClass("icon-star-fill").addClass("icon-star")
                 }
             })
@@ -200,9 +200,9 @@ function comment_format(rating_entry) {
 
     var card_body = "<div class='card-body row'>" + stars + review_desc + "</div>"
 
-    var user_pics = "<div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'><img src='../icons/person-circle.svg' width='24' height='24'></div>"
+    var user_pics = "<div class='col-lg-1 col-md-1 col-sm-3 col-1 text-right'><img src='icons/person-circle.svg' width='24' height='24'></div>"
     var user_name = "<div class='col-lg-2 col-md-2 col-sm-4 col-4 username align-middle pl-0'>" + user_rating.username + "</div>"
-    var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='../icons/heart.svg' width='18' height='18'><span class='mx-2 likes-and-comment'> 24 Likes </span></div>"
+    var comment_like = "<div class='col-lg-9 col-md-4 col-sm-5 col-7 border-left border-secondary'><img src='icons/heart.svg' width='18' height='18'><span class='mx-2 likes-and-comment'> 24 Likes </span></div>"
 
     var card_footer = "<div class='card-footer'><div class='row'>" + user_pics + user_name + comment_like + "</div></div>"
 
@@ -240,7 +240,7 @@ function display_rating_page(rest_db) {
 function generate_star(num, size=24) {
     var star_html = ""
     for (i = 0; i < num; i++) {
-        star_html += "<img src='../icons/star-fill.svg' width='"+size+"' height='"+size+"'></img>\n"
+        star_html += "<img src='icons/star-fill.svg' width='"+size+"' height='"+size+"'></img>\n"
     }
     return star_html
 }

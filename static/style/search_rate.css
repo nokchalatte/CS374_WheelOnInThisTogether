@@ -19,6 +19,10 @@
 	font-weight: bold;
 }
 
+.card-img-top {
+    height: 170px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -28,6 +32,10 @@ body {
 }
 .page {
     background-color: #F1F3F5;
+}
+
+.rest-card {
+    cursor: pointer;
 }
 
 .rstrnt-card {
@@ -46,7 +54,7 @@ body {
 
 .search-container {
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .spinner {
@@ -71,71 +79,10 @@ body {
     text-transform: uppercase;
 }
 
-/* Navbar for dayz */
-/* .nav-item:hover {
-	background: #A5D8FF;
+.title {
+    text-transform: uppercase;
 }
 
-.options {
-	text-align: center; 
-	color: rgba(0,0,0,0.8);
+.tooltip-inner {
+    white-space: pre-line;
 }
-
-.options:hover {
-	background: #A5D8FF;
-	cursor: pointer;
-}
-
-.navbar-fixed-top {
-	z-index: 1;
-	width: 100%;
-	background-color: #D0EBFF;
-}
-
-.active {
-	font-weight: bold;
-}
-
-.wrapper {
-    display: flex;
-    width: 100%;
-}
-
-#sidebar {
-    width: 100vw;
-    padding: 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
-    background: rgba(70,70,70,0.8);
-    color: #ffffff;
-    display: none;
-}
-
-.sidebar-header {
-	text-align: center;
-	margin-bottom: 0;
-	background-color: #D0EBFF;
-	color: rgba(0,0,0,0.8);
-	font-weight: bold;
-	box-shadow: 0px 0px 5px 5px #dcdcdc;
-	border-radius: 10px;
-	margin-left: 100px;
-	margin-right: 100px;
-}
-
-.sidebar-content {
-	padding: 50px;
-	background-color: #fff;
-	height: 50vh;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.sidebarClose {
-	text-decoration: underline;
-	color: #0000EE; 
-	cursor: pointer;
-} */

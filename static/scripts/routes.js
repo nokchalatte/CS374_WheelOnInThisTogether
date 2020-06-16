@@ -89,14 +89,15 @@ $( document ).ready(function() {
     var more_info = window.open("routes-individual.html"+"#"+id);
   }
 
-  function loadCard(id, imgl, title, username, likes, descl, ramp, ele, wheel){
-    var card = "<div class='card my-4 shadow border-0 route-card' id='" + id + "'><div class='card-body route-card-image' style='background-image: url('" + imgl[0] + "');'></div>"
-                + "<div class='card-body route-card-title'><h5>" + title + "</h5></div><div class='card-body username-group'>"
-                + "<div class='username-circle'></div><div class='username' id='username-index'><p>"
-                + username + "</p></div><div class='card-body route-likes'><img src='icons/heart.svg' width='18' height='18'>"
-                + "<small class='number-of-likes' id='route-number-likes'>" + likes + " Likes</small></div></div><div class='card-body route-card-contents'>"
+  function loadCard(id, imgl, title, username, likes, descl, ramp, ele, wheel, i){
+    var card = "<div class='card mb-5 ml-3 shadow border-0 route-card' id='" + id + "'><div class='card-body route-card-image'>"
+                + "<img class='route-card-img' src='" + imgl[0] + "' width='102%'></div>"
+                + "<div class='card-body'><div class='route-card-title'><h5>" + title + "</h5></div><div class='username-group'>"
+                + "<img src='icons/person-circle.svg' width='24' height='24'><p class='mb-0 route-card-username'>"
+                + username + "</p><div class='route-likes float-right'><img src='icons/heart.svg' width='18' height='18'>"
+                + "<p class='route-number-likes'>" + likes + " Likes</p></div></div><div class='route-card-contents my-3'>"
                 + "<ol><li class='route-contents-list'>" + descl[0] + "</li><li class='route-contents-list'>" + descl[1] + "</li><li class='route-contents-list'>" + descl[2] + "</li></ol></div>"
-                + "<div class='card-body route-card-icons'>";
+                + "<div class='route-card-icons mb-3'>";
     if (ramp){
       card = card + "<span class=icon-ramp aria-hidden='true' id='icon-ramp'></span>";
     }
@@ -107,9 +108,14 @@ $( document ).ready(function() {
       card = card + "<span class=icon-wheelchair aria-hidden='true' id='icon-wheelchair'></span>";
     }
 
-    card = card + "</div><div class='card-footer route-card-blue'><img src='icons/chevron-right.svg' class='chevron-icon' alt='more_information' style='border:none;'></div></div>";
+    card = card + "</div></div><div class='card-footer route-card-blue'><img src='icons/chevron-right.svg' class='chevron-icon float-right' alt='more_information' style='border:none;' width='24' height='24'></div></div>";
 
-    $('#routes-index-main').append(card);
+    //$('#routes-index-main').append(card);
+    if (i%2 == 0){
+      $('#routes-index-col-2').append(card);
+    } else{
+      $('#routes-index-col-3').append(card);
+    }
   }
 
 //Thank you StackOverflow (https://stackoverflow.com/questions/332872/encode-url-in-javascript, accessed around May 28) for encodeURI
@@ -154,14 +160,7 @@ $( document ).ready(function() {
       $("#no_result").hide();
       var x = 0; var y = -468;
       for (var i=0; i<(dataList.length); i++){
-        loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8]);
-        if (i%2 == 0){
-          x = 40;
-          y = y + 524;
-        } else {
-          x = 68;
-        }
-        document.getElementById(dataList[i][0]).style.cssText = "left:" + x + "%; top:" + y + "px;";
+        loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8], i);
       }
     } else{
       $("#no_result").show();
