@@ -67,6 +67,7 @@ $(document).ready(function() {
                 username: "wheelie"
             }
             console.log(input_data)
+            console.log(rest_key)
             insert_new_comment(rest_key, input_data).then(function() {
                 //Refresh and add the new comment
                 $("#comment-list").prepend(comment_format(input_data))
