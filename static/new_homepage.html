@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/new_homepage.css" type="text/css">
+    <link rel="stylesheet" href="style/new_navbar.css" type="text/css">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+ 	<!-- jQuery -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  	<!-- Firebase Realtime Database -->
+  	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+  	<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+	<script src="scripts/new_homepage.js" type="text/javascript"></script>
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav class="navbar sticky-top shadow color-black p-0">
+	    <nav class="navbar navbar-expand-lg container mt-0 mb-0 p-0">
+	        <a class="navbar-brand ml-2" href="new_homepage.html">
+	            <img class="p-0" src="homepagePictures/website_logo.png" width="250" height="80" class="d-inline-block align-top pr-2" alt="">
+	        </a>
+
+	        <div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
+	            <ul class="navbar-nav">
+	                <li class="nav-item"><a class="nav-link text-grey" href="routes-index.html">Look for Routes</a></li>
+	                <li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rate a Place</a></li>
+	                <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_mainpage.html">Ask a Question</a></li>
+	            </ul>
+	        </div>
+
+	        <div class="dropdown">
+	        	<a class="navbar-brand m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="new_homepage.html">
+		            <img src="homepagePictures/duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
+		        </a>
+			  	<div class="dropdown-menu text-center">Wheelie Wonka</div>
+			</div>
+	    </nav>
+	</nav>
+		
+	<div class="all_items pt-4">
+		<div class="container">
+			<div>
+				<i><h1 class="d-inline">Hello </h1><h1 class="d-inline text-yellow">Wheelie Wonka</h1><h1 class="d-inline">, what can we do for you?</h1></i>
+				<h3 class="mt-4 mb-3">Going somewhere?</h3>
+				<!-- Search Route -->
+				<form class="card shadow border-0 p-4 mt-3">
+				  	<div class="form-row pl-4">
+				    	<div class="col-5">
+					    	<label for="inputFrom" class="text-coal"><b>From</b></label>
+					    	<input type="text" class="form-control homepageSearch" id="fromLocation" placeholder="Your Place">
+				    	</div>
+				    	<div class="col-5">
+				    		<label for="inputTo" class="text-coal"><b>To</b></label>
+				      		<input type="text" class="form-control homepageSearch" id="toLocation" placeholder="Destination">
+				    	</div>
+				    	<div class="col-2 align-self-end">
+				    		<button type="button" class="btn d-flex input-block-level our_buttons color-yellow">SEARCH ROUTES</button>
+				    	</div>
+				  	</div>
+				</form>
+			</div>
+
+			<div class="form-row mt-3">
+				<div class="col-12">
+					<div class="alertMessage text-center" role="alert"></div>
+				</div>
+			</div>
+			
+			<!-- Recommended Place -->
+			<h3 class="mt-5 mb-3">Try these places out!</h3>
+			<div class="row mt-2">
+				<div class='col-md-3 col-sm-6'>
+	                <div class="card rest-card shadow border-0 color-yellow rounded-lg">
+	                    <img height="150px" class='card-img-top' src='homepagePictures/placesPictures/jungsik-2.png'>
+	                    <div class="card-body rstrnt-card">
+	                        <h5 class="card-title text-black">Jungsik Seoul</h5>
+	                        <p class="card-text">
+	                            <img src='icons/star-fill.svg' class="stars" width='20' height='20'>
+	                            <img src='icons/star-fill.svg' class="stars" width='20' height='20'>
+	                            <img src='icons/star-fill.svg' class="stars" width='20' height='20'>
+	                            <img src='icons/star-fill.svg' class="stars" width='20' height='20'>
+	                        </p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class='col-md-3 col-sm-6'>
+	                <div class="card rest-card shadow border-0 color-yellow rounded-lg">
+	                    <img height="150px" class='card-img-top' src='homepagePictures/placesPictures/museum-2.png'>
+	                    <div class="card-body rstrnt-card">
+	                        <h5 class="card-title text-black">Museum of Fine Arts</h5>
+	                        <p class="card-text">
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                        </p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class='col-md-3 col-sm-6'>
+	                <div class="card rest-card shadow border-0 color-yellow rounded-lg">
+	                    <img height="150px" class='card-img-top' src='homepagePictures/placesPictures/haeundae-1.png'>
+	                    <div class="card-body rstrnt-card">
+	                        <h5 class="card-title text-black">Haeundae Beach</h5>
+	                        <p class="card-text">
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                        </p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class='col-md-3 col-sm-6'>
+	                <div class="card rest-card shadow border-0 color-yellow rounded-lg">
+	                    <img height="150px" class='card-img-top' src='homepagePictures/placesPictures/robinsons-3.png'>
+	                    <div class="card-body rstrnt-card">
+	                        <h5 class="card-title text-black">Robinsons Otis</h5>
+	                        <p class="card-text">
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                            <img src='icons/star-fill.svg' width='20' height='20'>
+	                        </p>
+	                    </div>
+	                </div>
+	            </div>
+			</div>
+		</div>
+
+		<!-- Forum Section -->
+		<div class="mt-5 forum_section color-black">
+			<div class="container pt-5 pb-5">
+				<h3 class="text-grey">Got any troubles in mind?</h3>
+				<div class="row mt-3 pl-3">
+					<div class="col-7 card shadow border-0 rounded-lg p-0 advice_card">
+						<img class="card-img-top advice_pic" src="homepagePictures/advice_hope.jpg" alt="Card image cap" height="420">
+						<div class="card-body">
+							<h5><p class="category text-coal">Advice</p></h5>
+							<p >When you're feeling down, struggling with your lifestyle difficulties, or simply want to vent, there are people who can understand you. Hear from them in the Advice Section!</p>
+						</div>
+					</div>
+					<div class="col-5">
+						<div class="card shadow border-0 rounded-lg p-0 advice_card">
+							<img class="card-img-top rounded-top advice_pic" src="homepagePictures/events_hope.jpg" alt="Card image cap" height="">
+							<div class="card-body">
+								<h5><p class="category text-coal">Event</p></h5>
+								<p class="text-coal">Don't just stay at home! Check out amazing events you can still go to in the Event section!</p>
+							</div>
+						</div>
+						<div class="card shadow border-0 rounded-lg p-0 advice_card mt-3">
+							<img class="card-img-top rounded-top advice_pic" src="homepagePictures/health_hope.jpg" alt="Card image cap" height="">
+							<div class="card-body">
+								<h5><p class="category text-coal">Health</p></h5>
+								<p class="text-coal">For gym buddies, or just anyone who wants to stay active, find out how others do it in the Health section!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="rating pt-5 pb-5 text-center">
+				<h5><i>Like this website? Let us know your thoughts!</i></h5>
+				<h5 class="text-yellow"><b><i>wheeloninthistogether@gmail.com</i></b></h5>
+			</div>
+		</div>
+
+		<footer class="pt-4 mt-0 pd-5 border-top pl-5 pr-5">
+			<div class="container icons">	
+				<div class="d-flex justify-content-between">
+					<p class="d-inline-flex text-coal">Copyright&copy 2020 by WheelOnInThisTogether</p>
+					<div style="float: right;">
+						<a class="text-right text-muted d-inline-flex pr-3" href="https://github.com/wulanfrom/CS374_WheelOnInThisTogether"><span class="iconify" data-icon="logos-github-icon" data-inline="false"></span></a>
+						<a class="text-right text-muted d-inline-flex" href="https://www.kixlab.org/courses/cs374-spring-2020/index.html"><img src="homepagePictures/kixlab.png" height="15rem"></img></a>
+					</div>
+				</div>
+			</div>
+		</footer>				
+	</div>
+
+
+</body>
+</html>

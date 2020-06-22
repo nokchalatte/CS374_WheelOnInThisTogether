@@ -1,14 +1,26 @@
+#addRouteButton:hover, #searchRouteButton:hover, #goRatesButton:hover{
+  color: white;
+}
+/*
 #addToMyListCard{
   padding-top:8px;
-}
+} */
 
 #addToMyListCardLists{
   width: 100%;
 }
 
+.arrow-up-down:hover, .like_icon:hover{
+  cursor: pointer;
+}
+
+body{
+  background-color: #f1f4f7;
+}
+
 #card-individual-likes{
   display: inline-block;
-  color: #1971C2;
+  /* color: #1971C2; */
 }
 
 #card-individual-username{
@@ -20,29 +32,44 @@
   /* Thank you https://codepen.io/sosuke/pen/Pjoqqp for computing the filter needed */
 }
 
+#gmaps{
+  height: 500px;
+  width: 100%;
+}
+
+#gmaps-indiv{
+  height: 500px;
+  width: 100%;
+}
+
 #icon-ramp{
-  font-size: 30px;
+  font-size: 60px;
   padding-right: 8px;
   display:table-cell;
   vertical-align:top;
 }
 
 #icon-elevator{
-  font-size: 24px;
+  font-size: 48px;
   padding-right: 4px;
   display:table-cell;
   vertical-align:top;
 }
 
 #icon-wheelchair{
-  font-size: 32px;
+  font-size: 64px;
   padding-right: 8px;
   display:table-cell;
   vertical-align:top;
 }
 
-#individual-pictures{
+#individual-pictures-div{
   margin-top: 16px;
+}
+
+#goRatesButton{
+  width: 50%;
+  display: inline-block;
 }
 
 #no_result{
@@ -57,10 +84,31 @@
   display: inline-block;
 }
 
+/* Idea by https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img */
+.place-picture:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#recommended-routes{
+  padding-left: 30px;
+  height: auto;
+}
+
 .route-card{
   max-height: 500px;
   overflow: hidden;
 }
+
+/* Thank you https://stackoverflow.com/questions/5449031/move-link-image-5px-up-on-hover */
+/* .route-card:hover {
+    -moz-transform: translate(0, -5px);
+    -ms-transform: translate(0, -5px);
+    -o-transform: translate(0, -5px);
+    -webkit-transform: translate(0, -5px);
+    transform: translate(0, -5px);
+    cursor: pointer;
+} */
 
 .route-card-contents{
   max-height: 120px;
@@ -72,7 +120,6 @@
   width: auto;
   height: auto;
   display: table;
-  padding-left: 24px;
 }
 
 .route-card-username, .route-number-likes{
@@ -103,6 +150,85 @@
   width: 100%;
 }
 
+.spinner {
+    position: fixed;
+    z-index: 99999999999;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    background-color: rgba(128, 128, 128, 0.404);
+}
+
+.spinner-border {
+    position: absolute;
+    left: 45%;
+    top: 35%;
+    margin: 0px;
+    /* color: #fcba04; */
+    opacity: 100%;
+}
+
+.underline{
+  border-bottom: 4px solid #fcba04;
+}
+
 .username-created{
   display: inline-block;
+}
+
+.ui-autocomplete.ui-widget {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+}
+
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+.ui-autocomplete > li > div {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.ui-state-hover,
+.ui-state-active,
+.ui-state-focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #D0EBFF;
+  cursor: pointer;
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

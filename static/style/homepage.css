@@ -6,3 +6,22 @@ body {
 	margin-right: 25px;
 	margin-left: 25px;
 }
+
+.outer_line{
+	border-color: #1971C2;
+	background-color: #D0EBFF;
+	color: #1971C2;
+	/*border: none;*/
+	border-radius: 10px;
+	text-transform: uppercase;
+}
+
+.heart_button{
+	border-
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}
+
+.comment_icon{
+	stroke-width:2;
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}

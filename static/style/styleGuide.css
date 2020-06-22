@@ -1,13 +1,15 @@
+/*This is just a dummy example*/
+
 /* 	ICONS
 	Courtesy of IconFinder and IcoMoon
 */
   @font-face {
 	font-family: 'icomoon';
-	src:  url('../../fonts/icomoon.eot?p95qeu');
-	src:  url('../../fonts/icomoon.eot?p95qeu#iefix') format('embedded-opentype'),
-	  url('../../fonts/icomoon.ttf?p95qeu') format('truetype'),
-	  url('../../fonts/icomoon.woff?p95qeu') format('woff'),
-	  url('../../fonts/icomoon.svg?p95qeu#icomoon') format('svg');
+	src:  url('../fonts/icomoon.eot?p95qeu');
+	src:  url('../fonts/icomoon.eot?p95qeu#iefix') format('embedded-opentype'),
+	  url('../fonts/icomoon.ttf?p95qeu') format('truetype'),
+	  url('../fonts/icomoon.woff?p95qeu') format('woff'),
+	  url('../fonts/icomoon.svg?p95qeu#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -41,7 +43,7 @@
   }
   .icon-menu:before {
 	content: "\e9bd";
-  }  
+  }
 
 /*For the buttons*/
 /*Dont forget to add class pl-3 pr-3 pt-2 pb-2*/

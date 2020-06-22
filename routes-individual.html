@@ -4,187 +4,164 @@
 <head>
   <meta charset="utf-8">
   <title>More information on routes!</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="styleGuide.css" type="text/css">
-  <link rel="stylesheet" href="routes.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="topbar.css" type="text/css">
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <script src="./topbar.js" type="text/javascript"></script>
+  <link href="styleGuide.css" rel="stylesheet">
+  <link href="routes.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="outside_topbar">
-    <div class="topbar">
-      <div class="row">
-        <div class="col-md-1">
-          <h1><span class="icon-menu" id='sideBarOpen'></span></h1>
-        </div>
-        <div class="col-md-2" id="logo">
-          <b>
-            <center>WheelOn</center>
-          </b>
-        </div>
-        <div class="col-md" style="margin-top: 30px; font-size: 16; color: #1971C2;" align="right">
-          <span class="user-circle" style="cursor: pointer;"></span>
-          <span style="cursor: pointer;"> WHEELIE </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="sidebar">
-    <ul></ul>
-  </div>
-
   <!-- Main card -->
   <div class="container" id="routes-individual-main">
-    <div class="route-individual-title">
-      <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
-      <h2 id="card-individual-title"></h2>
-    </div>
-    <div class="card route-card-individual">
-      <span class=icon-like aria-hidden="true" id="heart-this"></span>
-      <div class="individual-created-by">
-        <p class="username-created">Created by</p>
-        <div class="username-circle" id="username-circle-individual"></div>
-        <div class="username" id="username-individual">
-          <p id="card-individual-username"></p>
+    <a href="routes-index.html">BACK TO ROUTE SEARCH PAGE</a>
+    <h2 id="card-individual-title"></h2>
+
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card post_card shadow bg-white p-4 m-0">
+          <div class="card-body p-0">
+            <svg class="bi bi-heart float-right" width="2em" height="2em" viewBox="0 0 16 16" fill="#74C0FC" xmlns="http://www.w3.org/2000/svg">
+      				<path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+      		  </svg>
+            <div class="individual-created-by">
+              <p class="username-created mb-1">Created by</p>
+              <img src="icons/person-circle.svg" class="ml-2" width='24' height='24'>
+              <p class="mb-1" id="card-individual-username"></p>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <img src="icons/heart.svg" id="heart-number">
+            <p class="number-of-likes" id="card-individual-likes"></p>
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h3>DESCRIPTION</h3>
+            <ol class="pl-3">
+              <li class="description-list" id="card-individual-list-1"></li>
+              <li class="description-list" id="card-individual-list-2"></li>
+              <li class="description-list" id="card-individual-list-3"></li>
+            </ol>
+          </div>
+          <div class="card-body p-0 mt-2">
+            <h3>LANDMARKS</h3>
+            <p id="card-individual-landmarks"></p>
+          </div>
+          <div class="card-body p-0 mt-2" id="individualFacilities">
+            <h3>FACILITIES</h3>
+            <!-- Bootstrap Collapse - Accordion -->
+            <div class="accordion" id="accordionFacilities">
+
+              <div class="card" id="facilitiesRamp">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Ramp
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionFacilities">
+                  <div class="card-body" id="rampContents">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="facilitiesElevator">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Elevator
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionFacilities">
+                  <div class="card-body" id="elevatorContents">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="facilitiesWheelchair">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Wheelchair
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionFacilities">
+                  <div class="card-body" id="wheelchairContents">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-0 mt-4" id="individual-pictures">
+            <h3>PICTURES</h3>
+          </div>
         </div>
       </div>
-      <div class="individual-likes">
-        <span class=icon-like aria-hidden="true" id="heart-number"></span>
-        <small class="number-of-likes" id="card-individual-likes"></small>
-      </div>
-      <div class="individual-description">
-        <h3>DESCRIPTION</h3>
-        <ol>
-          <li class="description-list" id="card-individual-list-1"></li>
-          <li class="description-list" id="card-individual-list-2"></li>
-          <li class="description-list" id="card-individual-list-3"></li>
-        </ol>
-      </div>
-      <div class="individual-landmarks">
-        <h3>LANDMARKS</h3>
-        <p id="card-individual-landmarks"></p>
-      </div>
-      <div class="individual-facilities">
-        <h3>FACILITIES</h3>
-        <!-- Bootstrap Collapse - Accordion -->
-        <div class="accordion" id="individualFacilities">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  W
-                </button>
-              </h2>
-            </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collapsible Group Item #2
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Collapsible Group Item #3
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
-            </div>
+      <div class="col-md-3">
+        <!-- Lists -->
+        <h4>Add to My List</h4>
+        <div class="categories_card" id="addToMyListCard">
+          <div class="list-group shadow" id="addToMyListCardLists">
+            <button type="button" class="list-group-item list-group-item-action">MY FAVORITE PLACE</button>
+            <button type="button" class="list-group-item list-group-item-action">HANGOUT</button>
+            <button type="button" class="list-group-item list-group-item-action">STUDY</button>
           </div>
         </div>
       </div>
-      <div id="individual-pictures">
-        <h3>PICTURES</h3>
-      </div>
+
     </div>
 
-    <!-- Lists -->
-    <div class="addList">
-      <h4>Add to My List</h4>
-    </div>
-    <div class="card route-list">
-      <div class="route-my-list">
-        <ul class="route-list-lists">
-          <li class="my-list-item">MY FAVORITE PLACE</li>
-          <li class="my-list-item">HANGOUT</li>
-          <li class="my-list-item" id="my-list-last">STUDY</li>
-        </ul>
-      </div>
-    </div>
+  </div>
 
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
-        authDomain: "wheeloninthistogether123.firebaseapp.com",
-        databaseURL: "https://wheeloninthistogether123.firebaseio.com",
-        projectId: "wheeloninthistogether123",
-        storageBucket: "wheeloninthistogether123.appspot.com",
-        messagingSenderId: "728495178731",
-        appId: "1:728495178731:web:06792b904ccd5693b2cfae",
-        measurementId: "G-2SRFF7XTB2"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
+      authDomain: "wheeloninthistogether123.firebaseapp.com",
+      databaseURL: "https://wheeloninthistogether123.firebaseio.com",
+      projectId: "wheeloninthistogether123",
+      storageBucket: "wheeloninthistogether123.appspot.com",
+      messagingSenderId: "728495178731",
+      appId: "1:728495178731:web:06792b904ccd5693b2cfae",
+      measurementId: "G-2SRFF7XTB2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 
-    <!-- Javascript -->
-    <script src="routes.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
+  <!-- Javascript -->
+  <script src="routes.js"></script>
+
+  <script type="text/javascript">
+    //Thank you StackOverflow (stackoverflow.com/questions/29364121/passing-variable-when-opening-another-html-page-using-javascript,
+    //accessed on June 9) for using hash to transfer variables between pages
+    $(document).ready(function() {
+      if (window.location.hash) {
         var location = window.location.hash;
         var splithash = location.split('#');
         var card_id = splithash[1];
         fillPage(card_id);
-      })
-    </script>
-  </div>
+      }
+    })
+  </script>
 
 </body>
 

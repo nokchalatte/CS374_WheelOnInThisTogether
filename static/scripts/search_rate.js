@@ -14,14 +14,11 @@ firebase.initializeApp(firebaseConfig);
 $(document).ready(function(){
     // var rest_db = null;
     $('[data-toggle="tooltip"]').tooltip()
+    
+    $(".spinner").show()
     get_restaurants().then((res) => {
-        console.log(res)
-        // $(".spinner").hide()
-        // rest_names = []
-        // console.log(res[0])
-        // for (idx in res) {
-        //     console.log()
-        // }
+        //console.log(res)
+        display_explore(res)
         display_autofill(res)
         $("#search-input").keypress(function(event) {
             if (event.which == "13") {
@@ -42,6 +39,19 @@ $(document).ready(function(){
 
     })
 
+    $(document).on("mouseenter", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "-=3%"
+        }, 250)
+        $(this).removeClass("shadow-sm").addClass("shadow")
+    })
+    $(document).on("mouseleave", ".rest-card", function() {
+        $(this).animate({
+            marginTop: "0"
+        }, 250)
+        $(this).removeClass("shadow").addClass("shadow-sm")
+    })
+
     $(document).on("click", ".rest-card", function(){
         // console.log($(this).find(".rstrnt-name").text())
         var rest_name = $(this).find(".rstrnt-name").text().toLowerCase()
@@ -50,13 +60,18 @@ $(document).ready(function(){
         var new_url = curr_html.replace(/\/[^\/]*$/, new_pathname)
         window.location.href = new_url
     })
+
+    $("#add-new-place").click(function(){
+        alert("Sorry, this feature is not available yet")
+    })
 })
 
 function display_query_result(rest_db, query) {
-    console.log(rest_db)
+    $('#rec-text').hide()
+    // console.log(rest_db)
     var result = null
     for (idx in rest_db) {
-        if (rest_db[idx].name.toLowerCase() == query) {
+        if (rest_db[idx].name.toLowerCase() == query.toLowerCase()) {
             result = rest_db[idx]
             break;
         }
@@ -68,16 +83,17 @@ function display_query_result(rest_db, query) {
     else {
         $(".no-result").hide()
         $('.result-cards').empty()
-        console.log(result)
+        // console.log(result)
         display_rest_card(result)
     }
 }
 
 async function display_autofill(rest_db) {
     get_rest_names().then((res) => {
-        console.log(res)
+        // console.log(res)
         $("#search-input").autocomplete({
             source: res,
+            minLength: 1,
             select: function(event, ui) {
                 $("#search-input").val(ui.item.value)
                 display_query_result(rest_db, $("#search-input").val())
@@ -101,6 +117,9 @@ async function display_image(rest_name) {
 
 function display_rest_card(result) {
     $(".spinner").show()
+    console.log(result)
+    var size = Object.keys(result.user_ratings).length
+    var rating = result.rating
     display_image(result.name).then((img_url) => {
         var rest_img = ''
         console.log(result.name)
@@ -110,12 +129,13 @@ function display_rest_card(result) {
         else {
             rest_img = "<img src='" + img_url + "' class='card-img-top'></img>"
         }
-        const rest_name = "<h3 class='card-title rstrnt-name'>" + result.name + "</h3>"
-        const rest_star = "<p class='card-text'>" + generate_star(result.rating.overall) + "</p>"
-        const rest_body = "<div class='card-body rstrnt-card'>" + rest_name + rest_star + "</div>"
+        const rest_name = "<h5 class='card-title rstrnt-name'>" + result.name + "</h5>"
+        const overall =  (rating.facility+rating.accessibility + rating.safety)/3
+        const rest_star = "<p class='card-text'>" + generate_star(Math.round(overall/size)) + "</p>"
+        const rest_body = "<div class='card-body rstrnt-card color-yellow'>" + rest_name + rest_star + "</div>"
         
         // display_image(result.name)
-        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card'>" + rest_img + rest_body + "</div></div>"
+        var card_html = "<div class='col-md-3 col-sm-6'><div class='card rest-card shadow-sm color-yellow border-0'>" + rest_img + rest_body + "</div></div>"
         $('.result-cards').append(card_html)
         $(".spinner").hide()
     })
@@ -142,7 +162,6 @@ async function get_restaurants() {
         console.log(error)
     }
     finally {
-        console.log('hey')
         console.log(rest_names)
         return rest_names
     }
@@ -159,5 +178,13 @@ async function get_rest_names() {
     }
     finally {
         return rest_names
+    }
+}
+
+function display_explore(rest_db) {
+    console.log("hey")
+    console.log(rest_db.length)
+    for (i = 1; i < 4; i++)  {
+        display_rest_card(rest_db[rest_db.length-i])
     }
 }

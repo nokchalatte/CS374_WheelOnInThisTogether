@@ -1,5 +1,5 @@
 body{
-	background-color: #F1F3F5;
+	background-color: #F1F4F7;
 }
 
 /*For Post Card (Nabila)*/
@@ -35,7 +35,7 @@ body{
 .back-to-mainpage{
 	text-transform: uppercase;
 	text-decoration: underline;
-	color: #1971C2;
+	/*color: #1971C2;*/
 }
 
 /*For tags*/
@@ -44,8 +44,8 @@ body{
 	text-transform: uppercase;
 	/*background-color: rgba(40,167,69,0.3);*/
 	/*color:#28a745;*/
-	background-color: #D0EBFF;
-	color:#1971C2;
+	background-color: #FCBA04;
+	color:#1b1b1e;
 }
 /*===========================================*/
 
@@ -62,4 +62,27 @@ body{
 .answered{
 	color: #868E96;
 	text-
+}
+
+.heart_button{
+	border-
+	filter: invert(44%) sepia(10%) saturate(3892%) hue-rotate(169deg) brightness(87%) contrast(105%);
+}
+
+.spinner {
+    position: fixed;
+    z-index: 99999999999;
+    width: 100%;
+    height: 100%;
+    /* margin: 0px; */
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+.spinner-border {
+    position: relative;
+    left: 50%;
+    top: 35%;
+    margin: 0px;
+    color: #1971C2;
+    opacity: 100%;
 }

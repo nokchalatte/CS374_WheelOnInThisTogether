@@ -1,0 +1,36 @@
+.rest-card{
+	border-radius: 10px;
+}
+
+.card-img-top{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+.forum_section{
+	background-color: lightgray;
+}
+
+.quote{
+	background-color: red;
+}
+
+.advice_card{
+	border-radius: 50px;
+}
+
+.our_buttons{
+	border-radius: 10px;
+}
+
+.stars{
+	filter: invert(34%) sepia(83%) saturate(3821%) hue-rotate(200deg) brightness(103%) contrast(104%);
+}
+
+.advice_card:hover {
+	cursor: pointer;
+}
+
+.rest-card:hover {
+	cursor: pointer;
+}

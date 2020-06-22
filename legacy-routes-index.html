@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Find a route!</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styleGuide.css" type="text/css">
+  <link rel="stylesheet" href="routes.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="topbar.css" type="text/css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="./topbar.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <div class="outside_topbar">
+    <div class="topbar row">
+      <div class="col-md-1 sideBarOpen">
+        <span class="icon-menu" id='sideBarOpen'></span>
+      </div>
+      <div class="col-md-2" id="logo">
+        <b><center>WheelOn</center></b>
+      </div>
+      <div class="col-md" style="font-size: 16; color: #1971C2;" align="right">
+        <span class="user-circle" style="cursor: pointer;"></span>
+        <span style="cursor: pointer;"> WHEELIE </span>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul></ul>
+  </div>
+
+  <div id="routes-index-main">
+    <!-- Search form -->
+    <div class="card route-form">
+      <form class="form">
+      <div class="form-group from-place">
+        <label for="fromPlace">FROM</label><br>
+        <input placeholder="Search for your starting place" class="input_default" id="fromPlace">
+      </div>
+      <span class=icon-up-down aria-hidden="true" id="arrow-logo"></span>
+      <div class="form-group to-place">
+        <label for="toPlace">TO</label><br>
+        <input placeholder="Search for your destination place" class="input_default" id="toPlace">
+      </div>
+      <div class="route-buttons">
+        <button type="button" class="default_primary" id="addRouteButton">Add Route</button>
+        <button type="button" class="default_primary" id="searchRouteButton">Search Route</button>
+      </div>
+      </form>
+    </div>
+
+    <!-- Google Maps -->
+    <iframe
+      id="gmaps"
+      width="36%"
+      height="500px"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY
+        &q=Space+Needle,Seattle+WA&maptype=roadmap&language=en" allowfullscreen>
+    </iframe>
+
+    <p id="no_result">No result to show</p>
+
+  </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTFFrlgMNcm4J0uJixFbI5U9pIYDayUmY",
+      authDomain: "wheeloninthistogether123.firebaseapp.com",
+      databaseURL: "https://wheeloninthistogether123.firebaseio.com",
+      projectId: "wheeloninthistogether123",
+      storageBucket: "wheeloninthistogether123.appspot.com",
+      messagingSenderId: "728495178731",
+      appId: "1:728495178731:web:06792b904ccd5693b2cfae",
+      measurementId: "G-2SRFF7XTB2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+
+    <!-- Javascript -->
+    <script src="routes.js"></script>
+
+</body>
+
+</html>

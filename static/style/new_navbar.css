@@ -1,0 +1,16 @@
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+
+nav a:hover {
+	color: #fcba04 !important;
+	font-weight: bold;
+}
+
+.active {
+	color: #fcba04 !important;	*/
+}

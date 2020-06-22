@@ -4,7 +4,7 @@ a{
 
 .addList{
   position: absolute;
-  top: 59px;
+  top: 169px;
   left: 70%;
 }
 
@@ -23,22 +23,32 @@ a{
 }
 
 .chevron-icon{
-  z-index: 1;
+  z-index: 9999;
   height: 24px;
   width: 24px;
   position: absolute;
   left: 88%;
-  top: 414px;
+  bottom: 12px;
   margin: 0;
-  fill: #4DABF7;
 }
 
 .container{
+  margin: 0;
+  height: auto;
+  width: 100%;
+}
+
+.container-fluid {
   margin: 0;
 }
 
 .description-list{
   font-size: 16px;
+  margin: 0 0 5px 20px;
+  padding-left: 8px;
+  list-style-type: decimal;
+  list-style-position: outside;
+  display: list-item;
 }
 
 .from-place{
@@ -53,6 +63,7 @@ a{
 #gmaps{
   border-radius: 10px;
   margin-top: 0;
+  margin-left: 32px;
   box-shadow: 2px 4px #CED4DA;
   border-width: 2px;
   border-color: #CED4DA;
@@ -78,8 +89,8 @@ h4{
 
 #heart-this{
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 32px;
+  right: 32px;
   font-size: 32px;
   color: #4DABF7;
 }
@@ -94,7 +105,7 @@ html{
 
 #icon-ramp{
   position: absolute;
-  top: 32px;
+  top: 12px;
   left: 66px;
   margin: 0;
 }
@@ -105,7 +116,7 @@ html{
 
 #icon-elevator{
   position: absolute;
-  top: 32px;
+  top: 12px;
   left: 66px;
   margin: 0;
   margin-left: 12%;
@@ -117,7 +128,7 @@ html{
 
 #icon-wheelchair{
   position: absolute;
-  top: 32px;
+  top: 12px;
   left: 66px;
   margin: 0;
   margin-left: 22%;
@@ -132,7 +143,7 @@ html{
   position: relative;
 }
 
-.individual-description, .individual-landmarks, .individual-pictures{
+.individual-description, .individual-landmarks, #individual-pictures{
   margin-top: 0;
 }
 
@@ -141,18 +152,31 @@ label{
   font-weight: bold;
 }
 
-li{
-  margin: 0 0 5px 0;
+.route-contents-list{
+  margin: 0 0 5px 40px;
   font-size: 14px;
+  padding-left: 8px;
+  list-style-type: decimal;
+  list-style-position: outside;
+  display: list-item;
 }
 
 .my-list-item{
   font-size: 16px;
+  list-style-type: none;
   margin-bottom: 20px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 #my-list-last{
   margin: 0;
+}
+
+#no_result{
+  position: absolute;
+  top: 340px;
+  left: 65%;
 }
 
 .number-of-likes{
@@ -172,18 +196,8 @@ p{
 }
 
 .place-picture{
-  width: 148px;
   height: 156px;
-  margin: 12px 0 0 0;
-}
-
-#place-picture-1{
-  background-color: #6B6B6B;
-  display: inline-block;
-}
-
-#place-picture-2{
-  background-color: #D8D8D8;
+  margin: 12px 4px 0 0;
   display: inline-block;
 }
 
@@ -198,30 +212,10 @@ p{
 
 .route-card{
   width: 24.167%;
-  height: 450px;
-  z-index: -1;
+  height: 480px;
+  z-index: -10;
   position: absolute;
   overflow: hidden;
-}
-
-#route-card-1{
-  left: 38%;
-  top: 0;
-}
-
-#route-card-2{
-  left: 66%;
-  top: 0;
-}
-
-#route-card-3{
-  left: 38%;
-  top: 494px;
-}
-
-#route-card-4{
-  left: 66%;
-  top: 494px;
 }
 
 .route-card-blue{
@@ -231,24 +225,24 @@ p{
   background-color: #D0EBFF;
   position: absolute;
   margin: 0;
-  top: 402px;
+  bottom: 0;
   left: 0;
 }
 
 .route-card-contents{
-  position: absolute;
-  width: 70.115%;
-  height: 95px;
-  margin: 0 0 0 40px;
-  top: 260px;
+  width: 80%;
+  height: 108px;
+  margin: 32px 0 0 28px;
   overflow: hidden;
 }
 
 .route-card-icons{
   position: absolute;
   width: 100%;
-  top: 330px;
   margin: 0;
+  min-height: 48px;
+  bottom: 48px;
+  background-color: white;
 }
 
 .route-card-image{
@@ -256,10 +250,7 @@ p{
   height:200px;
   border-radius: 10px 10px 0 0;
   background-color: #D8D8D8;
-  position: absolute;
   margin: 0;
-  top: 0;
-  left: 0;
 }
 
 .route-card-individual{
@@ -267,16 +258,40 @@ p{
   height: auto;
 }
 
+.route-likes{
+  margin-top: 0px;
+  position: absolute;
+  margin: 0;
+  width: auto;
+  right: 64px;
+  top: 5px;
+}
+
+.route-card-title{
+  margin: 16px 0 0 16px;
+}
+
 .route-form{
   width: 36%;
   height: auto;
+  padding: 32px;
+}
+
+#routes-index-main{
+  margin-top: 88px;
+  margin-left: 12px;
+  height: 0;
+}
+
+#routes-individual-main{
+  margin-top: 140px;
 }
 
 .route-list{
   position: absolute;
   width: 24.44%;
   height: auto;
-  top: 99px;
+  top: 206px;
   left: 70%;
 }
 
@@ -289,6 +304,11 @@ p{
 .route-my-List{
   position: absolute;
   top: 32px;
+}
+
+#route-number-likes{
+  display: inline-block;
+  min-width: 52px;
 }
 
 #searchRouteButton{
@@ -312,7 +332,8 @@ p{
 }
 
 #username-index{
-  margin-left: 44px;
+  margin-left: 36px;
+  font-size: 14px;
 }
 
 #username-individual{
@@ -321,12 +342,18 @@ p{
 
 .username-circle{
   background-color: #6B6B6B;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 25px;
   display: inline-block;
   margin: 0;
   position: absolute;
+  left: 0;
+}
+
+#username-circle-individual{
+  width: 32px;
+  height: 32px;
   left: 12%;
 }
 
@@ -338,7 +365,7 @@ p{
 }
 
 .username-group{
-  position: absolute;
-  top: 220px;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 16px;
+  position: relative;
+  height: auto;
 }

@@ -68,3 +68,48 @@
 	color: #0000EE; 
 	cursor: pointer;
 }
+
+.nav-link:hover{
+	color: #a9bcd0;
+}
+
+.text-black{
+	color:#1B1B1E;
+}
+
+.text-coal{
+	color: #373F51;
+}
+
+.text-yellow{
+	color: #fcba04;
+}
+
+.text-blue{
+	color: #a9bcd0;
+}
+
+.text-grey{
+	color: #d8dbe2;
+}
+
+.color-black{
+	background-color:#1B1B1E;
+}
+
+.color-coal{
+	background-color: #373F51;
+}
+
+.color-yellow{
+	background-color: #fcba04!important;
+}
+
+.color-blue{
+	background-color: #a9bcd0;
+}
+
+.color-grey{
+	background-color: #d8dbe2;
+}
+

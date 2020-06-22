@@ -12,7 +12,7 @@
 
 .list-group-item{
 	text-transform: uppercase;
-	color: #1971C2;
+	color: #007bff;
 	border-color:#D0EBFF;
 	padding: 12px 32px;
 	font-weight: 500;
@@ -25,7 +25,7 @@
 }
 .list-group-item:first-child{
 	text-transform: uppercase;
-	color: #1971C2;
+	/* color: #1971C2; */
 	border-color:#D0EBFF;
 	/*padding: 32px 32px 12px 32px;*/
 	padding: 12px 32px;
@@ -35,7 +35,7 @@
 
 .list-group-item:nth-child(5){
 	text-transform: uppercase;
-	color: #1971C2;
+	/* color: #1971C2; */
 	border-color:#D0EBFF;
 	/*padding: 12px 32px 32px 32px;*/
 	padding: 12px 32px;
@@ -44,15 +44,15 @@
 }
 
 .list-group-item:hover{
-	background-color: #D0EBFF;
-	color: #1971C2;
-	border-color:#D0EBFF;
+	background-color: #fcba04;
+	color: #373f51;
+	border-color:#fcba04;
 }
 
 .list-group-item.active{
-	background-color: #D0EBFF;
-	color: #1971C2;
-	border-color:#D0EBFF;
+	background-color: #fcba04;
+	color: #373f51;
+	border-color:#fcba04;
 	/*border-color: none !important;*/
 }
 
