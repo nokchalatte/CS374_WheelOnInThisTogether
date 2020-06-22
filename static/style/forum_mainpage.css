@@ -53,7 +53,7 @@ body{
 	/*padding: 12px 32px;
 	border-radius: 0px 0px 10px 10px;*/
 	/*border-bottom: 1px solid #D0EBFF;*/
-}
+/* } */
 
 .list-group-item-action:active{
 	background-color: #fcba04 !important;
@@ -182,7 +182,7 @@ body{
 	border-top-left-radius: 10px;
 }
 
-.active{
+.active-section{
 	background-color: #fcba04;
 }
 

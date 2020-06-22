@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>Forum New Page</title>
+	<title>Browse forum - Advice</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="styleGuide.css" type="text/css"> -->
     <!-- <link rel="stylesheet" href="rates.css" type="text/css"> -->
@@ -19,7 +19,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style/forum_mainpage.css" type="text/css">
-    <link rel="stylesheet" href="style/navbar.css" type="text/css">
+    <link rel="stylesheet" href="style/new_homepage.css" type="text/css">
+    <link rel="stylesheet" href="style/new_navbar.css" type="text/css">
     <link rel="stylesheet" href="style/styleGuide.css" type="text/css">
 
     <!-- Optional JavaScript -->
@@ -37,29 +38,29 @@
             <span class="sr-only">Loading...</span>
         </div>
     </div>
-	
+
 	<!-- Navigation Bar -->
-	<nav class="navbar sticky-top shadow color-black">
-	    <nav class="navbar navbar-expand-lg container pr-0 pl-0">
-	        <a class="navbar-brand ml-3" href="new_homepage.html">
-	            <img src="homepagePictures/WheelOn.png" width="120" height="30" class="d-inline-block align-top pr-2" alt="">
-	        </a>
+	<nav class="navbar sticky-top shadow color-black p-0">
+		<nav class="navbar navbar-expand-lg container mt-0 mb-0 p-0">
+			<a class="navbar-brand ml-2" href="new_homepage.html">
+				<img class="p-0" src="homepagePictures/website_logo.png" width="250" height="80" class="d-inline-block align-top pr-2" alt="">
+			</a>
 
-	        <div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
-	            <ul class="navbar-nav">
-	                <li class="nav-item"><a class="nav-link text-grey" href="routes-index.html">Look for Routes</a></li>
-	                <li class="nav-item pl-2"><a class="nav-link text-grey" href="restaurant_rate.html">Rate a Place</a></li>
-	                <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_homepage_advice.html">Ask a Question</a></li>
-	            </ul>
-	        </div>
-
-	        <div class="dropdown">
-	        	<a class="navbar-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="new_homepage.html">
-		            <img src="homepagePictures/duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
-		        </a>
-			  	<div class="dropdown-menu text-center">Wheelie Wonka</div>
+			<div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link text-grey" href="routes-index.html">Look for Routes</a></li>
+					<li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rate a Place</a></li>
+					<li class="nav-item pl-2"><a class="nav-link active" href="forum_mainpage.html">Ask a Question</a></li>
+				</ul>
 			</div>
-	    </nav>
+
+			<div class="dropdown">
+				<a class="navbar-brand m" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="new_homepage.html">
+					<img src="homepagePictures/duck.jpg" width="30" height="30" class="rounded-circle profile-pic d-inline-block align-top" alt="">
+				</a>
+				  <div class="dropdown-menu text-center">Wheelie Wonka</div>
+			</div>
+		</nav>
 	</nav>
 
 	<div class="container mt-4">
@@ -104,7 +105,7 @@
 								<select name="topic" id="select_category" class="pl-3 pr-3 pt-2 pb-2">
 									<!-- <option value="1">All</option> -->
 									<option value="2" selected>Advice</option>
-									<option value="3">Event</option>
+									<option value="3">Events</option>
 									<option value="4">Health</option>
 									<option value="5">Random</option>
 								</select>
@@ -173,8 +174,8 @@
 					<h3 class="pt-5 mt-4">Category</h3>
 					<div class="list-group shadow" style="width: 12em">
 						<button type="button" class="text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">All</button>
-						<button type="button" class="active text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Advice</button>
-						<button type="button" class="text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Event</button>
+						<button type="button" class="active-section text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Advice</button>
+						<button type="button" class="text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Events</button>
 						<button type="button" class="text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Health</button>
 						<button type="button" class="text-left border-0 pl-3 pt-3 pr-3 pb-3 categories">Random</button>
 					</div>

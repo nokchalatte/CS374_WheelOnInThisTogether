@@ -29,22 +29,22 @@ $(document).ready(function () {
             var key_db = childSnapshot.key;
             if(!from_places.includes(from_db)) {
                 from_places.push(from_db);
-                to_places.push(to_db);  
-                key_places.push(key_db);              
+                to_places.push(to_db);
+                key_places.push(key_db);
             }
-            
+
         });
     });
 
     $("#fromLocation").autocomplete({
-        source: from_places, 
+        source: from_places,
         autoFocus: true,
         delay: 0,
         minLength: 1
     });
 
     $("#toLocation").autocomplete({
-        source: to_places, 
+        source: to_places,
         autoFocus: true,
         delay: 0,
         minLength: 1
@@ -56,24 +56,28 @@ $(document).ready(function () {
         let inputsTo = document.getElementsByClassName('form-control')[1].value;
         let alertMessage = document.getElementsByClassName('alertMessage')[0];
 
+        $('.alertMessage').hide();
         $('.alertMessage').addClass('alert alert-danger');
 
-        if ((inputsFrom == "") && (inputsTo == "")) { 
+        if ((inputsFrom == "") && (inputsTo == "")) {
             alertMessage.innerHTML = "Please fill in your starting place and destination."
+            $('.alertMessage').show();
             $(".alertMessage").slideDown()
             setTimeout(function() {
                 $(".alertMessage").slideUp()
             }, 5000);
         }
-        else if (inputsFrom == "") { 
+        else if (inputsFrom == "") {
             alertMessage.innerHTML = "Please fill in your starting place.";
+            $('.alertMessage').show();
             $(".alertMessage").slideDown()
             setTimeout(function() {
                 $(".alertMessage").slideUp()
             }, 5000);
         }
-        else if (inputsTo == "") { 
+        else if (inputsTo == "") {
             alertMessage.innerHTML = "Please fill in your destination.";
+            $('.alertMessage').show();
             $(".alertMessage").slideDown()
             setTimeout(function() {
                 $(".alertMessage").slideUp()
@@ -84,33 +88,33 @@ $(document).ready(function () {
                 if (inputsFrom == from_places[k]) {
                     window.location.href = "routes-index.html" + "#" + key_places[k];
                 }
-            }            
+            }
         }
     })
 
     // HOMEPAGE ANIMATION
     $(document).on('mouseenter', '.rest-card', function(){
         $(this).animate({marginTop: "-=3%"}, 150);
-    });   
+    });
 
     $(document).on('mouseleave', '.rest-card', function(){
         $(this).animate({marginTop: "0"}, 150);
-    }); 
+    });
 
-    // FORUM SPECIFIC CATEGORIES 
+    // FORUM SPECIFIC CATEGORIES
     $('.advice_card').on('click', function() {
         let categoryName = $(this).find('.category').html();
         if (categoryName == "Advice") { window.open('forum_homepage_advice.html','_self'); }
         else if (categoryName == "Health") { window.open('forum_homepage_health.html','_self'); }
         else if (categoryName == "Events") { window.open('forum_homepage_exercise.html','_self'); }
-    }) 
+    })
 
     //RATES CLICK PLACES
     $('.rest-card').on('click', function() {
         let restaurantRates = $(this).find('.card-title').html();
         if (restaurantRates == "Jungsik Seoul") { window.open('restaurant_rate.html?name=jungsik%20seoul','_self'); }
-        else if (restaurantRates == "Museum of Fine Arts") { window.open('restaurant_rate.html?name=museum%20of%20fine%20arts','_self'); }
+        else if (restaurantRates == "Museum of Fine Arts") { window.open('restaurant_rate.html?name=museum%20of%20fine%20arts,%20boston','_self'); }
         else if (restaurantRates == "Haeundae Beach") { window.open('restaurant_rate.html?name=haeundae%20beach','_self'); }
         else if (restaurantRates == "Robinsons Otis") { window.open('restaurant_rate.html?name=robinsons%20otis','_self'); }
-    }) 
+    })
 });

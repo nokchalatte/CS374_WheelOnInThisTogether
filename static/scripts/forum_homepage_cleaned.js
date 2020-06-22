@@ -354,7 +354,7 @@ $(document).ready(function(){
         console.log(this.innerHTML);
         if (this.innerHTML == "All") { window.open('forum_mainpage.html', '_self'); }
         else if (this.innerHTML == "Advice") { window.open('forum_homepage_advice.html', '_self'); }
-        else if (this.innerHTML == "Event") { window.open('forum_homepage_exercise.html', '_self'); }
+        else if (this.innerHTML == "Events") { window.open('forum_homepage_exercise.html', '_self'); }
         else if (this.innerHTML == "Health") { window.open('forum_homepage_health.html', '_self'); }
         else if (this.innerHTML == "Random") { window.open('forum_homepage_other.html', '_self'); }
     });

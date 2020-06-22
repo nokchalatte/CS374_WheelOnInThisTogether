@@ -417,6 +417,7 @@ $(document).ready(function(){
 	function get_comments(){
 		$(".spinner").show();
 		var comment_section = document.getElementsByClassName("comment_container")[0]; //the third item with the class container is our card format
+		document.getElementsByClassName("comment_container").innerHTML = ''
 		comment_array = [];
 		var comments_section_length = 0;
 		$(".spinner").show();

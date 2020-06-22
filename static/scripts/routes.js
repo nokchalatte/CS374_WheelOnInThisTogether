@@ -316,25 +316,26 @@ $("#searchRouteButton").click(function() {
   let inputsTo = document.getElementById('toPlace').value;
   let alertMessage = document.getElementsByClassName('alertMessage')[0];
 
+  $('.alertMessage').hide();
   $('.alertMessage').addClass('alert alert-danger');
 
   if ((inputsFrom == "") && (inputsTo == "")) {
-    alertMessage.innerHTML = "Please fill in your starting place and destination."
-    $(".alertMessage").slideDown()
+    alertMessage.innerHTML = "Please fill in your starting place and destination.";
+    $(".alertMessage").slideDown();
     setTimeout(function() {
-      $(".alertMessage").slideUp()
+      $(".alertMessage").slideUp();
     }, 5000);
   } else if (inputsFrom == "") {
     alertMessage.innerHTML = "Please fill in your starting place.";
-    $(".alertMessage").slideDown()
+    $(".alertMessage").slideDown();
     setTimeout(function() {
-      $(".alertMessage").slideUp()
+      $(".alertMessage").slideUp();
     }, 5000);
   } else if (inputsTo == "") {
     alertMessage.innerHTML = "Please fill in your destination.";
-    $(".alertMessage").slideDown()
+    $(".alertMessage").slideDown();
     setTimeout(function() {
-      $(".alertMessage").slideUp()
+      $(".alertMessage").slideUp();
     }, 5000);
   } else {
     searchRoute();
