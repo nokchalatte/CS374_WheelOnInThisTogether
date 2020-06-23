@@ -78,12 +78,13 @@ $(document).ready(function() {
             updates['restaurant/'+rest_key+'/rating/safety'] = rest_rating.safety + safety_input
 
             //Update the rating on the page
-            rest_rating.overall = rest_rating.overall + overall
             rest_rating.facility = rest_rating.facility + facility_input
             rest_rating.accessibility = rest_rating.accessibility + access_input
             rest_rating.safety = rest_rating.safety + safety_input
 
             rest_comment_size = rest_comment_size + 1
+            console.log(rest_rating)
+            console.log(rest_rating)
             update_page_star(rest_rating, rest_comment_size)
 
             console.log(overall)
@@ -344,8 +345,12 @@ async function insert_new_comment(rest_key, new_comment) {
 
 function update_page_star(rest_rating, size) {
     const rating = rest_rating
-    $(".rstrnt-overall").html(generate_star(Math.round(rating.overall/size), 36))
+    var overall = (rating.facility + rating.accessibility + rating.safety)/3
+    console.log(overall)
+    $(".rstrnt-overall").html(generate_star(Math.round(overall/size), 36))
     $(".rstrnt-facility").html(generate_star(Math.round(rating.facility/size), 24))
     $(".rstrnt-access").html(generate_star(Math.round(rating.accessibility/size), 24))
     $(".rstrnt-safety").html(generate_star(Math.round(rating.safety/size), 24))
+
+    $(".overall-avg").text(Math.round(overall*100/size)/100)
 }
