@@ -25,6 +25,10 @@
     /* width: 90%; */
 }
 
+.card-right {
+    margin-right: 30px;
+}
+
 body {
     font-family: 'Roboto';
 
@@ -42,8 +46,14 @@ body {
     background-color: #f1f4f7;
 }
 
+.picture-card {
+    width: 250px;
+    height: 150px;
+}
+
 .rest-card {
     cursor: pointer;
+    height: 250px;
 }
 
 .rstrnt-card {
@@ -90,6 +100,9 @@ body {
     width: 100%;
   }
   
+.underline{
+    border-bottom: 4px solid #fcba04;
+}
 
 .username {
     text-transform: uppercase;

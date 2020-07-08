@@ -173,11 +173,11 @@ $(document).ready(function(){
 			var post_tag_title = document.createElement("h5");
 			post_tag_title.setAttribute("class", "text-left post_main_title mb-2 d-inline");
 			// post_tag_title.innerHTML = post_title;
-			var post_tag = document.createElement("span");
-			post_tag.innerHTML = post_category;
-			post_tag_title.append(post_tag);
-			post_tag.setAttribute("class", "badge color-blue category-tags p-2 mr-2");
-			card_body.append(post_tag_title);
+			// var post_tag = document.createElement("span");
+			// post_tag.innerHTML = post_category;
+			// post_tag_title.append(post_tag);
+			// post_tag.setAttribute("class", "badge color-blue category-tags p-2 mr-2");
+			// card_body.append(post_tag_title);
 			var post_main_title = document.createElement("h5");
 			post_main_title.innerHTML = post_title;
 			post_main_title.setAttribute('class','d-inline');

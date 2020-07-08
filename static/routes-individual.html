@@ -30,9 +30,9 @@
 
       <div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="routes-index.html">Look for Routes</a></li>
-          <li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rate a Place</a></li>
-          <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_mainpage.html">Ask a Question</a></li>
+          <li class="nav-item"><a class="nav-link active" href="routes-index.html">Routes</a></li>
+          <li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rates</a></li>
+          <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_mainpage.html">Forum</a></li>
         </ul>
       </div>
 
@@ -47,7 +47,7 @@
 
   <!-- Main card -->
   <div class="container mt-4" id="routes-individual-main">
-    <a href="#" id="individual-backto">BACK TO ROUTE SEARCH PAGE</a>
+    <a href="#" class="mb-3" id="individual-backto">BACK TO ROUTE SEARCH PAGE</a>
     <h2 id="card-individual-title"></h2>
 
     <div class="row">
@@ -85,52 +85,11 @@
           </div>
           <div class="card-body p-0 mt-2" id="individualFacilities">
             <h4 class="d-inline underline">FACILITIES</h4>
-            <!-- Bootstrap Collapse - Accordion -->
-            <div class="accordion mt-2" id="accordionFacilities">
-
-              <div class="card" id="facilitiesRamp">
-                <div class="card-header" id="headingOne">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" id="rampAccordion" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Ramp
-                    </button>
-                  </h2>
-                </div>
-
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionFacilities">
-                  <div class="card-body" id="rampContents">
-                  </div>
-                </div>
-              </div>
-
-              <div class="card" id="facilitiesElevator">
-                <div class="card-header" id="headingTwo">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" id="eleAccordion" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Elevator
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionFacilities">
-                  <div class="card-body" id="elevatorContents">
-                  </div>
-                </div>
-              </div>
-
-              <div class="card" id="facilitiesWheelchair">
-                <div class="card-header" id="headingThree">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" id="wheelAccordion" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Wheelchair
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionFacilities">
-                  <div class="card-body" id="wheelchairContents">
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ul class="mt-2 pl-3">
+              <li id="rampContents"></p>
+              <li id="elevatorContents"></p>
+              <li id="wheelchairContents"></p>
+            </ul>
           </div>
           <div class="card-body p-0 mt-4" id="individual-pictures-div">
             <h4 class="d-inline underline">PICTURES</h4>

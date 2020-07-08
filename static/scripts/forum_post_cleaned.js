@@ -46,7 +46,7 @@ $(document).ready(function(){
 				// console.log('this is the item');
 				var childValue = childSnapshot.val(); 
 				// console.log(childValue);
-				$('#category_badge').html(childValue.category);
+				// $('#category_badge').html(childValue.category);
 				$('.content_post').html(childValue.content);
 				$('.username').html(childValue.poster);
 				$('.disc_topic').html(childValue.title);

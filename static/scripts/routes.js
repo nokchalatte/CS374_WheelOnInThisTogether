@@ -77,23 +77,23 @@ function fillPage(id) {
     fillContent("card-individual-likes", (contentList[2] + " Likes"));
     fillContent("card-individual-description", contentList[12]);
     fillContent("card-individual-landmarks", contentList[4]);
-    fillContent("rampContents", contentList[9]);
-    fillContent("elevatorContents", contentList[10]);
-    fillContent("wheelchairContents", contentList[11]);
+    fillContent("rampContents", "Ramp: " + contentList[9]);
+    fillContent("elevatorContents", "Elevator: " + contentList[10]);
+    fillContent("wheelchairContents", "Wheelchair: " + contentList[11]);
     fillContent("hidfromPlace", contentList[13]);
     fillContent("hidtoPlace", contentList[14]);
 
-    if (!contentList[6]) {
-      $("#rampAccordion").addClass("text-secondary");
-    }
-
-    if (!contentList[7]) {
-      $("#eleAccordion").addClass("text-secondary");
-    }
-
-    if (!contentList[8]) {
-      $("#wheelAccordion").addClass("text-secondary");
-    }
+    // if (!contentList[6]) {
+    //   $("#rampAccordion").addClass("text-secondary");
+    // }
+    //
+    // if (!contentList[7]) {
+    //   $("#eleAccordion").addClass("text-secondary");
+    // }
+    //
+    // if (!contentList[8]) {
+    //   $("#wheelAccordion").addClass("text-secondary");
+    // }
 
     if ((contentList[6] || contentList[7] || contentList[8]) == false) {
       nofacil = "<p id='no-facilities'>There are no accessibility facilities in this location</p>";

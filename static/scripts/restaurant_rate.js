@@ -28,6 +28,9 @@ $(document).ready(function() {
     $("#error-msg").hide()
     $("#error-comment").hide()
     $("#success-msg").hide()
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
 
     get_restaurant_db(rest_name).then((res) => {
         $(".spinner").hide()
@@ -35,6 +38,7 @@ $(document).ready(function() {
         rest_rating = res.val().rating
         rest_comment_size = Object.keys(res.val().user_ratings).length
         console.log(res.val())
+        display_pictures(rest_name, rest_key)
         display_rating_page(res.val())
     })
 
@@ -249,6 +253,32 @@ async function display_image(rest_name) {
     }
 }
 
+async function display_pictures(rest_name, rest_key) {
+    try {
+        var ref = firebase.database().ref("restaurant/"+rest_key+"/pictures")
+        // var result = null
+        await ref.once('value', function(snapshot) {
+            snapshot.forEach(res => {
+                var img_ref = firebase.storage().ref('restaurants/'+rest_name+'/'+res.val())
+                img_ref.getDownloadURL().then(function(url) {
+                    //Display the image
+                    console.log(url)
+                    add_picture(url)
+                    // $(".rstrnt-img").attr("src", url)
+                })
+            });
+        })
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+function add_picture(picture_url) {
+    var picture_html = "<div class='col-md-4'> <img src='" + picture_url + "' class='picture-card'> </div>"
+    $("#picture-list").append(picture_html)
+}
+
 function comment_format(rating_entry) {
     var comment_key = rating_entry[0]
     const user_rating = rating_entry[1]
@@ -326,6 +356,9 @@ function generate_star(num, size=24) {
     var star_html = ""
     for (i = 0; i < num; i++) {
         star_html += "<img src='icons/star-fill.svg' width='"+size+"' height='"+size+"'></img>\n"
+    }
+    for (i = 0; i < 5-num; i++) {
+        star_html += "<img src='icons/star.svg' width='"+size+"' height='"+size+"'></img>\n"
     }
     return star_html
 }

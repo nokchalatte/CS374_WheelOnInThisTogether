@@ -29,9 +29,9 @@
 
       <div class="collapse navbar-collapse d-flex justify-content-end pr-3" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="routes-index.html">Look for Routes</a></li>
-          <li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rate a Place</a></li>
-          <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_mainpage.html">Ask a Question</a></li>
+          <li class="nav-item"><a class="nav-link active" href="routes-index.html">Routes</a></li>
+          <li class="nav-item pl-2"><a class="nav-link text-grey" href="search_rate.html">Rates</a></li>
+          <li class="nav-item pl-2"><a class="nav-link text-grey" href="forum_mainpage.html">Forum</a></li>
         </ul>
       </div>
 
@@ -123,7 +123,12 @@
         </div>
       </div>
     </div>
-    <p id="no_result">No result to show</p>
+    <div class="text-center" id="no_result">
+      <img src="icons/sadsmiley.png" style="width: 12rem;" class="mx-auto mb-4">
+      <!-- Image from https://www.kissclipart.com/ -->
+      <h4>No result to show... Perhaps try looking for other routes?</h4>
+    </div>
+
   </div>
 
   <!-- jQuery -->
@@ -162,6 +167,7 @@
   <script src="scripts/routes.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      $("#no_result").hide();
       if (window.location.hash) {
         var location = window.location.hash;
         var splithash = location.split('#');
@@ -208,7 +214,6 @@
 
             dataList.push([pushid, imagesList, title_db, username_db, likes_db, description_db, ramp_db, elevator_db, wheelchair_db, liked]);
           });
-          $("#no_result").hide();
           for (var i = 0; i < (dataList.length); i++) {
             loadCard(dataList[i][0], dataList[i][1], dataList[i][2], dataList[i][3], dataList[i][4], dataList[i][5], dataList[i][6], dataList[i][7], dataList[i][8], dataList[i][9], i);
           }
