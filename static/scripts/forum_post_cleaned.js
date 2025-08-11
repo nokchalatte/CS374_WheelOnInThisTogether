@@ -1,5 +1,4 @@
-// Fix comment amount bug
-
+// Forum-post-cleaned
 $(document).ready(function(){
 	//We're going to be redirected from the homepage, so we need to prepare the data already available in Firebase
 	var curr_url = new URLSearchParams(window.location.search);
@@ -35,7 +34,7 @@ $(document).ready(function(){
 	$("#like-msg").hide();
 	$("#post-msg").hide();
 	$("#empty-msg").hide();
-	$("#delete-msg").hide()
+	// $("#delete-msg").hide()
 
 	//Replace the writings at the post with data from Firebase key
 	firebase.database().ref('post_comment').once('value',function(snapshot){
@@ -82,59 +81,59 @@ $(document).ready(function(){
 		});
 	});
 
-	// Delete comment posted by user when they push the button
-	$(document).on('click','.delete_comment_button', function(){
-		var selected_comment =  $(this).closest('.comment_from_user');
-		console.log('the selected comment: ',selected_comment.html());
+	// // Delete comment posted by user when they push the button
+	// $(document).on('click','.delete_comment_button', function(){
+	// 	var selected_comment =  $(this).closest('.comment_from_user');
+	// 	console.log('the selected comment: ',selected_comment.html());
 
-		//Delete the html 
-		selected_comment.remove();
-		//Change the firebase database
-		var comment_key = selected_comment.attr('data-key');
-		console.log('comment key: ', comment_key);
-		var path = firebase.database().ref('post_comment/' + post_key+'/user_comments/'+comment_key);
-		path.remove(); //remove from database
-		var main_path = firebase.database().ref('post_comment/' + post_key);
-		main_path.once('value').then(function(snapshot){
-			var items = snapshot.val();
-			var items_content = Object.values(items);
-			var updatedData = {
-				category: items_content[0],
-				content: items_content[1],
-				key: items_content[2],
-				liked: items_content[3],
-				poster: items_content[4],
-				title: items_content[5],
-				total_likes: items_content[6],
-				total_replies: items_content[7]-1,
-				user_comments: items_content[8],
-				// if (items.length == 8){
-				// 	user_comments: null,
-				// }
-				// else{
-				// 	user_comments: items_content[8],
-				// }
-			}
-			//Update the number of likes on the page
-			var updates = {};
-			updates['post_comment/' + post_key] = updatedData;
-			firebase.database().ref().update(updates);
+	// 	//Delete the html 
+	// 	selected_comment.remove();
+	// 	//Change the firebase database
+	// 	var comment_key = selected_comment.attr('data-key');
+	// 	console.log('comment key: ', comment_key);
+	// 	var path = firebase.database().ref('post_comment/' + post_key+'/user_comments/'+comment_key);
+	// 	path.remove(); //remove from database
+	// 	var main_path = firebase.database().ref('post_comment/' + post_key);
+	// 	main_path.once('value').then(function(snapshot){
+	// 		var items = snapshot.val();
+	// 		var items_content = Object.values(items);
+	// 		var updatedData = {
+	// 			category: items_content[0],
+	// 			content: items_content[1],
+	// 			key: items_content[2],
+	// 			liked: items_content[3],
+	// 			poster: items_content[4],
+	// 			title: items_content[5],
+	// 			total_likes: items_content[6],
+	// 			total_replies: items_content[7]-1,
+	// 			user_comments: items_content[8],
+	// 			// if (items.length == 8){
+	// 			// 	user_comments: null,
+	// 			// }
+	// 			// else{
+	// 			// 	user_comments: items_content[8],
+	// 			// }
+	// 		}
+	// 		//Update the number of likes on the page
+	// 		var updates = {};
+	// 		updates['post_comment/' + post_key] = updatedData;
+	// 		firebase.database().ref().update(updates);
 
-			var changedReplies = items_content[7] - 1;
-			if (changedReplies == 1){
-				$('#total_replies').html(items_content[7] - 1 + " Reply");
-				$('.number_replies').html(items_content[7] - 1 + " Reply");
-			}
-			else{
-				$('#total_replies').html(items_content[7] - 1 + " Replies");
-				$('.number_replies').html(items_content[7] - 1 + " Replies");
-			}
-		});
-		$("#delete-msg").slideDown()
-        setTimeout(function() {
-            $("#delete-msg").slideUp()
-        }, 5000);
-	});
+	// 		var changedReplies = items_content[7] - 1;
+	// 		if (changedReplies == 1){
+	// 			$('#total_replies').html(items_content[7] - 1 + " Reply");
+	// 			$('.number_replies').html(items_content[7] - 1 + " Reply");
+	// 		}
+	// 		else{
+	// 			$('#total_replies').html(items_content[7] - 1 + " Replies");
+	// 			$('.number_replies').html(items_content[7] - 1 + " Replies");
+	// 		}
+	// 	});
+	// 	$("#delete-msg").slideDown()
+    //     setTimeout(function() {
+    //         $("#delete-msg").slideUp()
+    //     }, 5000);
+	// });
 
 	$('.heart_button').on('click', function(){
 		var path = firebase.database().ref('post_comment/' + post_key);
@@ -143,7 +142,7 @@ $(document).ready(function(){
 			var items = snapshot.val();
 			var items_content = Object.values(items);
 			// console.log('items: '+ Object.values(items));
-			var liked = items_content[3];
+			var liked = items_content[2];
 			// console.log('liked: '+ !liked);
 			console.log('liked: '+ liked);
 			//If liked, popup comes up
@@ -166,33 +165,33 @@ $(document).ready(function(){
 					}
 
 					var updatedData = {
-						category: items_content[0],
-						content: items_content[1],
-						key: items_content[2],
+						// category: items_content[0],
+						content: items_content[0],
+						key: items_content[1],
 						liked: false,
-						poster: items_content[4],
-						title: items_content[5],
-						total_likes: items_content[6] - 1,
-						total_replies: items_content[7],
+						poster: items_content[3],
+						title: items_content[4],
+						total_likes: items_content[5] - 1,
+						total_replies: items_content[6],
 						user_comments: updated_userComments,
 						// if (items.length == 8){
 						// 	user_comments: null,
 						// }
 						// else{
 						// 	user_comments: items_content[8],
-						// }
+						// }						
 					}
 					//Update the number of likes on the page
 					var updates = {};
 					updates['post_comment/' + post_key] = updatedData;
 					firebase.database().ref().update(updates);
 
-					var changedLikes = items_content[6] - 1;
+					var changedLikes = items_content[5] - 1;
 					if (changedLikes == 1){
-						$('#total_hearts').html(items_content[6] - 1 + " Like");
+						$('#total_hearts').html(items_content[5] - 1 + " Like");
 					}
 					else{
-						$('#total_hearts').html(items_content[6] - 1 + " Likes");
+						$('#total_hearts').html(items_content[5] - 1 + " Likes");
 					}
 				});
 			}
@@ -215,18 +214,18 @@ $(document).ready(function(){
 					// console.log('items: '+ Object.values(items));
 					var updated_userComments = null;
 					if (items.length >8){
-						updated_userComments = items_content[8]
+						updated_userComments = items_content[7]
 					}
 
 					var updatedData = {
-						category: items_content[0],
-						content: items_content[1],
-						key: items_content[2],
+						// category: items_content[0],
+						content: items_content[0],
+						key: items_content[1],
 						liked: true,
-						poster: items_content[4],
-						title: items_content[5],
-						total_likes: items_content[6] + 1,
-						total_replies: items_content[7],
+						poster: items_content[3],
+						title: items_content[4],
+						total_likes: items_content[5] + 1,
+						total_replies: items_content[6],
 						user_comments: updated_userComments,
 						// if (items.length == 8){
 						// 	user_comments: null,
@@ -241,12 +240,12 @@ $(document).ready(function(){
 					updates['post_comment/' + post_key] = updatedData;
 					firebase.database().ref().update(updates);
 
-					var changedLikes = items_content[6] + 1;
+					var changedLikes = items_content[5] + 1;
 					if (changedLikes == 1){
-						$('#total_hearts').html(items_content[6] + 1 + " Like");
+						$('#total_hearts').html(items_content[5] + 1 + " Like");
 					}
 					else{
-						$('#total_hearts').html(items_content[6] + 1 + " Likes");
+						$('#total_hearts').html(items_content[5] + 1 + " Likes");
 					}
 				});
 			};
@@ -261,6 +260,7 @@ $(document).ready(function(){
 	//If you press post_comment, the comments will appear and added to the bottom
 	$("#post_comment").on('click',function(){
 		// if the text is empty, then make error popup
+		console.log('post comment clicked');
 		var user_input = document.getElementById('user_input');
 		// console.log('user_input: ', user_input.innerHTML);
 		if (user_input.value == ''){
@@ -321,11 +321,11 @@ $(document).ready(function(){
 					comment_body.setAttribute('class', 'card-body p-4');
 					comment_card.append(comment_body);
 
-					var delete_button = document.createElement('button');
-					delete_button.setAttribute('class', 'btn float-right delete_comment_button');
-					// delete_button.setAttribute('onclick', "delete_comment");
-					delete_button.innerHTML = 'Delete';
-					comment_body.append(delete_button);
+					// var delete_button = document.createElement('button');
+					// delete_button.setAttribute('class', 'btn float-right delete_comment_button');
+					// // delete_button.setAttribute('onclick', "delete_comment");
+					// delete_button.innerHTML = 'Delete';
+					// comment_body.append(delete_button);
 
 
 					var user_profile = document.createElement('img');
@@ -364,36 +364,37 @@ $(document).ready(function(){
 				console.log('items: '+ Object.values(items));
 
 				var updatedData = {
-					category: items_content[0],
-					content: items_content[1],
-					key: items_content[2],
-					liked: items_content[3],
-					poster: items_content[4],
-					title: items_content[5],
-					total_likes: items_content[6],
-					total_replies: items_content[7] + 1,
-					user_comments: items_content[8],
+					// category: items_content[0],
+					content: items_content[0],
+					key: items_content[1],
+					liked: items_content[2],
+					poster: items_content[3],
+					title: items_content[4],
+					total_likes: items_content[5],
+					total_replies: items_content[6] + 1,
+					user_comments: items_content[7],
 				}
 
 				var updates = {};
 				updates['post_comment/' + post_key] = updatedData;
 				firebase.database().ref().update(updates);
 
-				var changedReply = items_content[7] + 1;
+				var changedReply = items_content[6] + 1;
 				if (changedReply == 1){
-					$('#total_replies').html(items_content[7] + 1 + " Reply");
-					$('.number_replies').html(items_content[7] + 1 + " Reply");
+					$('#total_replies').html(items_content[6] + 1 + " Reply");
+					$('.number_replies').html(items_content[6] + 1 + " Reply");
 				}
 				else{
-					$('#total_replies').html(items_content[7] + 1 + " Replies");
-					$('.number_replies').html(items_content[7] + 1 + " Replies");
+					$('#total_replies').html(items_content[6] + 1 + " Replies");
+					$('.number_replies').html(items_content[6] + 1 + " Replies");
 				}
 			});
 	        $("#post-msg").slideDown()
 	        setTimeout(function() {
 	            $("#post-msg").slideUp()
 	        }, 5000);
-    	};
+		};
+		console.log('finished')
 	});
 
 	// Initialize comments on page
@@ -466,11 +467,11 @@ $(document).ready(function(){
 				answered.innerHTML = "answered";
 				comment_body.append(answered);
 
-				var delete_button = document.createElement('button');
-				delete_button.setAttribute('class', 'btn float-right delete_comment_button');
-				// delete_button.setAttribute('onclick', "delete_comment");
-				delete_button.innerHTML = 'Delete';
-				comment_body.append(delete_button);
+				// var delete_button = document.createElement('button');
+				// delete_button.setAttribute('class', 'btn float-right delete_comment_button');
+				// // delete_button.setAttribute('onclick', "delete_comment");
+				// delete_button.innerHTML = 'Delete';
+				// comment_body.append(delete_button);
 
 				var comment_p = document.createElement('p');
 				comment_p.setAttribute('class', 'd-block comment-content m-0 mt-3');

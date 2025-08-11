@@ -1,4 +1,4 @@
-// Makes sure the codes run when we open the page
+// forum_homepage_cleaned
 $(document).ready(function(){
 	$("#post-msg").hide();
 	$("#content-msg").hide();
@@ -49,11 +49,8 @@ $(document).ready(function(){
 	function get_post(){
 		console.log('getting post');
 	    var input_content = document.getElementById("user_input"); //content
-	    var title_content = document.getElementById("topic_input"); //topic
-	    var e = document.getElementById("select_category");
+		var title_content = document.getElementById("topic_input"); //topic
 	    // console.log('e: ',e);
-	    var category = e.options[e.selectedIndex].text;
-
 	    //if user keeps one of them blank, dont make post
 	    if (input_content.value.length != 0 && title_content.value.length!=0){
 			// console.log('input: ', input_content.value);
@@ -63,7 +60,7 @@ $(document).ready(function(){
 			console.log(key);
 			var post = {
 				key: key,
-				category: category,
+				// category: category,
 				title: title_content.value,
 				content: input_content.value,
 				total_likes: 0,
@@ -98,7 +95,9 @@ $(document).ready(function(){
 	        setTimeout(function() {
 	            $("#content-msg").slideUp();
 	        }, 5000);
-	    }
+		}
+		document.getElementById("topic_input").value = "";
+		document.getElementById("user_input").value = "";
 	};
 
 	// var elements = document.getElementsByClassName('redirect');
@@ -145,15 +144,15 @@ $(document).ready(function(){
         //Reload everything in firebase
         for (var i=0; i<post_array.length;i++){
 			// console.log('post array: '+post_array[i]);
-			var post_category = post_array[i][0];
-			var post_content = post_array[i][1];
-			var post_key = post_array[i][2];
-			var liked = post_array[i][3];
+			// var post_category = post_array[i][0];
+			var post_content = post_array[i][0];
+			var post_key = post_array[i][1];
+			var liked = post_array[i][2];
 			// var post_poster = "Wheelie";
-			var post_poster = post_array[i][4];
-			var post_title = post_array[i][5];
-			var post_likes = post_array[i][6];
-			var post_replies = post_array[i][7];
+			var post_poster = post_array[i][3];
+			var post_title = post_array[i][4];
+			var post_likes = post_array[i][5];
+			var post_replies = post_array[i][6];
 			// var liked = 
 
 			//Add to HTML
@@ -380,7 +379,7 @@ $(document).ready(function(){
     //     $(this).animate({marginTop: "0"}, 150);
     // });
 	// getKey();
-
+	
 	add_new_post();
 
     $('.categories').on('click', function() {
@@ -388,5 +387,6 @@ $(document).ready(function(){
         if (categoryName == "Advice") { console.log("Advice"); }
         else if (categoryName == "Health") { console.log("Health"); }
         else if (categoryName == "Events") { console.log("Events"); }
-    }) 
+	}) 
+
 });
